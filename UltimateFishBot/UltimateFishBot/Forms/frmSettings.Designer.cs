@@ -624,6 +624,7 @@
             this.cbAlt.TabIndex = 5;
             this.cbAlt.Text = "Use Alt-Key Modifer";
             this.cbAlt.UseVisualStyleBackColor = true;
+            this.cbAlt.Visible = false;
             // 
             // cbHearth
             // 
