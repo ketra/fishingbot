@@ -35,6 +35,7 @@
             this.LabelScanningStepsDesc = new System.Windows.Forms.Label();
             this.LabelScanningSteps = new System.Windows.Forms.Label();
             this.TabPage3 = new System.Windows.Forms.TabPage();
+            this.cbSoundAvg = new System.Windows.Forms.CheckBox();
             this.lblAudioLevel = new System.Windows.Forms.Label();
             this.pgbSoundLevel = new System.Windows.Forms.ProgressBar();
             this.LabelAudioDeviceDesc = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             this.LabelSplashThresholdDesc = new System.Windows.Forms.Label();
             this.LabelSplashThreshold = new System.Windows.Forms.Label();
             this.TabPage4 = new System.Windows.Forms.TabPage();
+            this.ModKeycb = new System.Windows.Forms.ComboBox();
+            this.ModifierKeylb = new System.Windows.Forms.Label();
             this.txtHotKey = new System.Windows.Forms.TextBox();
             this.labelHotKey = new System.Windows.Forms.Label();
             this.txtCharmTime = new System.Windows.Forms.TextBox();
@@ -129,7 +132,6 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.chkTxt2speech = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.cbSoundAvg = new System.Windows.Forms.CheckBox();
             this.TabPage3.SuspendLayout();
             this.TabPage4.SuspendLayout();
             this.tabSettings.SuspendLayout();
@@ -195,6 +197,16 @@
             this.TabPage3.TabIndex = 2;
             this.TabPage3.Text = "Hearing The Fish";
             this.TabPage3.UseVisualStyleBackColor = true;
+            // 
+            // cbSoundAvg
+            // 
+            this.cbSoundAvg.AutoSize = true;
+            this.cbSoundAvg.Location = new System.Drawing.Point(14, 178);
+            this.cbSoundAvg.Name = "cbSoundAvg";
+            this.cbSoundAvg.Size = new System.Drawing.Size(404, 17);
+            this.cbSoundAvg.TabIndex = 20;
+            this.cbSoundAvg.Text = "Use averaging method (better in crowded areas, but less chance to catch a fish)";
+            this.cbSoundAvg.UseVisualStyleBackColor = true;
             // 
             // lblAudioLevel
             // 
@@ -276,6 +288,8 @@
             // 
             // TabPage4
             // 
+            this.TabPage4.Controls.Add(this.ModKeycb);
+            this.TabPage4.Controls.Add(this.ModifierKeylb);
             this.TabPage4.Controls.Add(this.txtHotKey);
             this.TabPage4.Controls.Add(this.labelHotKey);
             this.TabPage4.Controls.Add(this.txtCharmTime);
@@ -325,6 +339,24 @@
             this.TabPage4.TabIndex = 3;
             this.TabPage4.Text = "Premium Settings";
             this.TabPage4.UseVisualStyleBackColor = true;
+            // 
+            // ModKeycb
+            // 
+            this.ModKeycb.FormattingEnabled = true;
+            this.ModKeycb.Location = new System.Drawing.Point(419, 93);
+            this.ModKeycb.Name = "ModKeycb";
+            this.ModKeycb.Size = new System.Drawing.Size(92, 21);
+            this.ModKeycb.TabIndex = 55;
+            // 
+            // ModifierKeylb
+            // 
+            this.ModifierKeylb.AutoSize = true;
+            this.ModifierKeylb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModifierKeylb.Location = new System.Drawing.Point(295, 96);
+            this.ModifierKeylb.Name = "ModifierKeylb";
+            this.ModifierKeylb.Size = new System.Drawing.Size(51, 13);
+            this.ModifierKeylb.TabIndex = 54;
+            this.ModifierKeylb.Text = "modKey";
             // 
             // txtHotKey
             // 
@@ -1183,16 +1215,6 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // cbSoundAvg
-            // 
-            this.cbSoundAvg.AutoSize = true;
-            this.cbSoundAvg.Location = new System.Drawing.Point(14, 178);
-            this.cbSoundAvg.Name = "cbSoundAvg";
-            this.cbSoundAvg.Size = new System.Drawing.Size(404, 17);
-            this.cbSoundAvg.TabIndex = 20;
-            this.cbSoundAvg.Text = "Use averaging method (better in crowded areas, but less chance to catch a fish)";
-            this.cbSoundAvg.UseVisualStyleBackColor = true;
-            // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1327,6 +1349,8 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.CheckBox chkTxt2speech;
         private System.Windows.Forms.CheckBox cbSoundAvg;
+        private System.Windows.Forms.ComboBox ModKeycb;
+        internal System.Windows.Forms.Label ModifierKeylb;
 
     }
 }

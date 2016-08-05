@@ -61,12 +61,53 @@ namespace UltimateFishBot.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] CoreAudioApi {
+            get {
+                object obj = ResourceManager.GetObject("CoreAudioApi", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;translation&gt;
+        ///    &lt;frmCode&gt;
+        ///        &lt;TITLE&gt;Thanks for using the UltimateFishBot&lt;/TITLE&gt;
+        ///        &lt;LIBELLE_TITLE&gt;Relax... It&apos;s still free !&lt;/LIBELLE_TITLE&gt;
+        ///        &lt;LIBELLE_DESC&gt;You&apos;ve used the Ultimate Fishbot {0} times. To continue using it; you need to visit the Fishbot website and enter the 3-5 digit code in the box below.  If a browser window didn&apos;t open, you can find it at www.fishbot.net/code.html - or click the link below.  I promise, it&apos;s quick and painless.&lt;/LIBELLE_DESC&gt;
+        ///        &lt;LIBELLE_TRY_AGAIN&gt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string English {
+            get {
+                return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap fishIcon35x35 {
             get {
                 object obj = ResourceManager.GetObject("fishIcon35x35", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;translation&gt;
+        ///    &lt;frmCode&gt;
+        ///        &lt;TITLE&gt;Merci d&apos;utiliser l&apos;UltimateFishBot&lt;/TITLE&gt;
+        ///        &lt;LIBELLE_TITLE&gt;Relax... C&apos;est toujours gratuit !&lt;/LIBELLE_TITLE&gt;
+        ///        &lt;LIBELLE_DESC&gt;
+        ///          Vous avez utilisé UltimateFishBot {0} fois.
+        ///          Pour continuer à l&apos;utiliser, vous devez visiter le site Fishbot et renseigner les 3 chiffres.
+        ///          Si votre navigateur internet ne s&apos;est pas ouvert, cliquez simplement sur le lien ci-dessous.
+        ///          Ne vous inquietez pas, c&apos;est est très rapide et sans douleu [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Français {
+            get {
+                return ResourceManager.GetString("Français", resourceCulture);
             }
         }
         

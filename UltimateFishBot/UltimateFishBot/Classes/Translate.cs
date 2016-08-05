@@ -18,7 +18,11 @@ namespace UltimateFishBot.Classes
                 try
                 {
                     // Example : ./Resources/English.xml
-                    doc.Load("./Resources/" + Properties.Settings.Default.Language + ".xml");
+                    //doc.Load("./Resources/" + Properties.Settings.Default.Language + ".xml");
+                    if (Properties.Settings.Default.Language == "English")
+                        doc.LoadXml(Properties.Resources.English);
+                    else if (Properties.Settings.Default.Language == "Français")
+                        doc.LoadXml(Properties.Resources.Français);
                     m_elements = doc.DocumentElement;
                 }
                 catch (Exception ex)

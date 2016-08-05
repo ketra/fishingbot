@@ -123,6 +123,15 @@
 
         <LABEL_CUSTOMIZE_DESC>Parametrez vos raccourcis pour éviter de ré-arranger vos barres avant/après la pêche.</LABEL_CUSTOMIZE_DESC>
 
+        <LABEL_MODIFIER_KEY>touche de modification:</LABEL_MODIFIER_KEY>
+        <CMB_MOD_KEY>Aucun</CMB_MOD_KEY>
+        <CMB_MOD_KEY>CTRL (control)</CMB_MOD_KEY>
+        <CMB_MOD_KEY>ALT</CMB_MOD_KEY>
+        <CMB_MOD_KEY>SHIFT</CMB_MOD_KEY>
+        <CMB_MOD_KEY>CTRL + ALT</CMB_MOD_KEY>
+        <CMB_MOD_KEY>CTRL + SHIFT</CMB_MOD_KEY>
+        <CMB_MOD_KEY>ALT + SHIFT</CMB_MOD_KEY>
+        
         <CB_ALT_KEY>Utiliser touche Alt</CB_ALT_KEY>
         <CB_AUTO_LURE>Appliquer Leurre toutes les X minutes</CB_AUTO_LURE>
         <CB_AUTO_HEARTHSTONE>Pierre de Foyer après X Minutes:</CB_AUTO_HEARTHSTONE>

@@ -97,6 +97,7 @@
 
         <LABEL_ALTERNATIVE_ROUTE>Spiral route</LABEL_ALTERNATIVE_ROUTE>
         <LABEL_ALTERNATIVE_ROUTE_DESC>An alternative route for bobber searching.</LABEL_ALTERNATIVE_ROUTE_DESC>
+
 		
 		<LABEL_SCAN_AREA>Scanning Area (if disabled the scanning area will be calculated automatically):</LABEL_SCAN_AREA>
 		<SET_SCANNING_AREA>Set Scanning Area</SET_SCANNING_AREA>
@@ -131,7 +132,15 @@
         <LABEL_BAIT_KEY_7>WoD Bait Key 7:</LABEL_BAIT_KEY_7>
 
         <LABEL_CUSTOMIZE_DESC>Customize shortkeys to avoid rearranging your bars before/after fishing.</LABEL_CUSTOMIZE_DESC>
-
+        <LABEL_MODIFIER_KEY>Modifier Key:</LABEL_MODIFIER_KEY>
+        <CMB_MOD_KEY>None</CMB_MOD_KEY>
+        <CMB_MOD_KEY>CTRL (control)</CMB_MOD_KEY>
+        <CMB_MOD_KEY>ALT</CMB_MOD_KEY>
+        <CMB_MOD_KEY>SHIFT</CMB_MOD_KEY>
+        <CMB_MOD_KEY>CTRL + ALT</CMB_MOD_KEY>
+        <CMB_MOD_KEY>CTRL + SHIFT</CMB_MOD_KEY>
+        <CMB_MOD_KEY>ALT + SHIFT</CMB_MOD_KEY>
+      
         <CB_ALT_KEY>Use Alt-Key Modifer</CB_ALT_KEY>
         <CB_AUTO_LURE>Apply Lure Every X minutes</CB_AUTO_LURE>
         <CB_AUTO_HEARTHSTONE>Hearth To Inn After X Minutes:</CB_AUTO_HEARTHSTONE>

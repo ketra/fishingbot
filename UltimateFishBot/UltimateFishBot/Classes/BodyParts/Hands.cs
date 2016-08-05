@@ -83,7 +83,7 @@ namespace UltimateFishBot.Classes.BodyParts
                     {
                         actionKey = Properties.Settings.Default.RaftKey;
                         mouth.Say(Translate.GetTranslate("manager", "LABEL_APPLY_RAFT"));
-                        sleepTime = 2;
+                        sleepTime = 6;
                         break;
                     }
                 case Manager.NeededAction.Bait:
@@ -106,10 +106,10 @@ namespace UltimateFishBot.Classes.BodyParts
                 default:
                     return;
             }
-
+            Random rand = new Random();
             Win32.ActivateWow();
             Win32.SendKey(actionKey);
-            Thread.Sleep(sleepTime * 1000);
+            Thread.Sleep(sleepTime * 1000 + rand.Next(20,500));
         }
     }
 }

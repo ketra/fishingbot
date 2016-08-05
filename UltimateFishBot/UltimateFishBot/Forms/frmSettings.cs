@@ -5,6 +5,7 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using UltimateFishBot.Classes;
+using System.Reflection;
 
 namespace UltimateFishBot.Forms
 {
@@ -128,6 +129,9 @@ namespace UltimateFishBot.Forms
             cbCycleThroughBaitList.Text     = Translate.GetTranslate("frmSettings", "CB_CYCLE_THROUGH_BAIT_LIST");
             cbShiftLoot.Text                = Translate.GetTranslate("frmSettings", "CB_SHIFT_LOOT");
 
+            ModifierKeylb.Text              = Translate.GetTranslate("frmSettings", "LABEL_MODIFIER_KEY");
+            LoadModKeys();
+
             LabelProcessName.Text           = Translate.GetTranslate("frmSettings", "LABEL_PROCESS_NAME");
             LabelProcessNameDesc.Text       = Translate.GetTranslate("frmSettings", "LABEL_PROCESS_NAME_DESC");
 
@@ -175,6 +179,8 @@ namespace UltimateFishBot.Forms
             cbAutoLure.Checked      = Properties.Settings.Default.AutoLure;
             cbHearth.Checked        = Properties.Settings.Default.SwapGear;
             cbAlt.Checked           = Properties.Settings.Default.UseAltKey;
+
+            ModKeycb.SelectedIndex  = Properties.Settings.Default.ModifierKey;
 
             txtFishKey.Text         = Properties.Settings.Default.FishKey;
             txtLureKey.Text         = Properties.Settings.Default.LureKey;
@@ -251,6 +257,7 @@ namespace UltimateFishBot.Forms
             Properties.Settings.Default.AutoLure        = cbAutoLure.Checked;
             Properties.Settings.Default.SwapGear        = cbHearth.Checked;
             Properties.Settings.Default.UseAltKey       = cbAlt.Checked;
+            Properties.Settings.Default.ModifierKey     = ModKeycb.SelectedIndex;
 
             Properties.Settings.Default.FishKey         = txtFishKey.Text;
             Properties.Settings.Default.LureKey         = txtLureKey.Text;
@@ -345,17 +352,27 @@ namespace UltimateFishBot.Forms
 
         private void LoadLanguages()
         {
-            string[] languageFiles = Directory.GetFiles("./Resources/", "*.xml");
+            Array files = Assembly.GetExecutingAssembly().GetManifestResourceNames();
             cmbLanguage.Items.Clear();
-
-            foreach (string file in languageFiles)
+            foreach (string f in files)
             {
-                string tmpFile = file.Substring(12); // Remove the "./Resources/" part
-                tmpFile = tmpFile.Substring(0, tmpFile.Length - 4); // Remove the  ".xml" part
-                cmbLanguage.Items.Add(tmpFile);
-            }
+                if (f.EndsWith("xml"))
+                {
+                    string item = f.Remove(f.LastIndexOf(".xml"));
+                    item = item.Substring(item.LastIndexOf(".") + 1);
 
+                    cmbLanguage.Items.Add(item);
+                }
+            }
             cmbLanguage.SelectedItem = Properties.Settings.Default.Language;
+        }
+
+        private void LoadModKeys()
+        {
+            ModKeycb.Items.Clear();
+
+            foreach (string keys in Translate.GetTranslates("frmSettings", "CMB_MOD_KEY"))
+                ModKeycb.Items.Add(keys);
         }
 
         private void LoadAntiAfkMovements()

@@ -33,6 +33,16 @@ namespace UltimateFishBot.Classes.Helpers
             public IntPtr hCursor;
             public Point ptScreenPos;
         }
+        public enum ModKey
+        {
+            none = 0,
+            ctrl = 1,
+            alt = 2,
+            shift = 3,
+            crtl_alt = 4,
+            ctrl_shift = 5,
+            alt_shift = 6
+        };
 
         public enum keyState
         {
@@ -156,13 +166,39 @@ namespace UltimateFishBot.Classes.Helpers
         {
             if (sKeys != " ")
             {
-                if (Properties.Settings.Default.UseAltKey)
-                    sKeys = "%(" + sKeys + ")"; // %(X) : Use the alt key
-                else
-                    sKeys = "{" + sKeys + "}";  // {X} : Avoid UTF-8 errors (é, è, ...)
+                switch ((ModKey)Properties.Settings.Default.ModifierKey)
+                {
+                    case ModKey.alt:
+                        sKeys = "%(" + sKeys + ")"; // %(X) : Use the alt key
+                        break;
+                    case ModKey.ctrl:
+                        sKeys = "^(" + sKeys + ")";
+                        break;
+                    case ModKey.shift:
+                        sKeys = "+(" + sKeys + ")";
+                        break;
+                    case ModKey.alt_shift:
+                        sKeys = "%+(" + sKeys + ")";
+                        break;
+                    case ModKey.crtl_alt:
+                        sKeys = "^%(" + sKeys + ")";
+                        break;
+                    case ModKey.ctrl_shift:
+                        sKeys = "^+(" + sKeys + ")"; // %(X) : Use the alt key
+                        break;
+                    case ModKey.none:
+                        sKeys = "{" + sKeys + "}";  // {X} : Avoid UTF-8 errors (é, è, ...)
+                        break;
+
+                }
+                //if (Properties.Settings.Default.UseAltKey)
+                //    sKeys = "^+(" + sKeys + ")"; // %(X) : Use the alt key
+                //else
+                //    sKeys = "{" + sKeys + "}";  // {X} : Avoid UTF-8 errors (é, è, ...)
             }
 
             SendKeys.Send(sKeys);
+            
         }
 
         public static void SendMouseClick()
