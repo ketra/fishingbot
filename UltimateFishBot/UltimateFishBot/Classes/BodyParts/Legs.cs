@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Windows.Forms;
 using UltimateFishBot.Classes.Helpers;
+using System;
 
 namespace UltimateFishBot.Classes.BodyParts
 {
@@ -35,17 +36,19 @@ namespace UltimateFishBot.Classes.BodyParts
 
         private void MovePath(Keys[] moves)
         {
+            Random rand = new Random();
             foreach (Keys move in moves)
             {
                 SingleMove(move);
-                Thread.Sleep(250);
+                Thread.Sleep(250 + rand.Next(200));
             }
         }
 
         private void SingleMove(Keys move)
         {
+            Random rand = new Random();          
             Win32.SendKeyboardAction(move, Win32.keyState.KEYDOWN);
-            Thread.Sleep(250);
+            Thread.Sleep(250 + rand.Next(300));
             Win32.SendKeyboardAction(move, Win32.keyState.KEYUP);
         }
     }
