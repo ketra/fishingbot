@@ -33,13 +33,14 @@ namespace UltimateFishBot.Forms
         private frmMain m_mainForm;
         private MMDevice m_SndDevice;
         private Keys m_hotkey;
+        private Keys p_hotkey;
 
         public frmSettings(frmMain mainForm)
         {
             InitializeComponent();
             m_mainForm = mainForm;
             m_SndDevice = null;
-
+            m_mainForm.UnregisterHotKeys();
             tmeAudio.Tick += new EventHandler(tmeAudio_Tick);
         }
 
@@ -419,12 +420,15 @@ namespace UltimateFishBot.Forms
         private void LoadHotKeys()
         {
             m_hotkey = Properties.Settings.Default.StartStopHotKey;
+            p_hotkey = Properties.Settings.Default.PauseResumeKey;
             txtHotKey.Text = new KeysConverter().ConvertToString(m_hotkey);
+            PHotKey.Text = new KeysConverter().ConvertToString(p_hotkey);
         }
 
         private void SaveHotKeys()
         {
             Properties.Settings.Default.StartStopHotKey = m_hotkey;
+            Properties.Settings.Default.PauseResumeKey = p_hotkey;
             m_mainForm.ReloadHotkeys();
         }
 
@@ -432,6 +436,11 @@ namespace UltimateFishBot.Forms
         {
             m_hotkey = e.KeyData;
             txtHotKey.Text = new KeysConverter().ConvertToString(m_hotkey);
+        }
+        private void PHotKey_KeyDown(object sender, KeyEventArgs e)
+        {
+            m_hotkey = e.KeyData;
+            PHotKey.Text = new KeysConverter().ConvertToString(m_hotkey);
         }
 
         private void customAreaCheckbox_CheckedChanged(object sender, EventArgs e)

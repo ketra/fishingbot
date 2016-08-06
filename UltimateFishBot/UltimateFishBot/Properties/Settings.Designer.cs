@@ -634,5 +634,17 @@ namespace UltimateFishBot.Properties {
                 this["ModifierKey"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+Shift+P")]
+        public global::System.Windows.Forms.Keys PauseResumeKey {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["PauseResumeKey"]));
+            }
+            set {
+                this["PauseResumeKey"] = value;
+            }
+        }
     }
 }

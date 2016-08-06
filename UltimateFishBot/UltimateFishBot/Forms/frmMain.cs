@@ -23,7 +23,8 @@ namespace UltimateFishBot
 
         public enum HotKey
         {
-            StartStop   = 0
+            StartStop   = 0,
+            PauseResume = 1
         }
 
         public frmMain()
@@ -161,6 +162,10 @@ namespace UltimateFishBot
                     else
                         btnStop_Click(null, null);
                 }
+                else if (id == (int)HotKey.PauseResume)
+                {
+                    btnStart_Click(null, null);
+                }
             }
         }
 
@@ -175,6 +180,7 @@ namespace UltimateFishBot
                 switch (hotKey)
                 {
                     case HotKey.StartStop: key = Properties.Settings.Default.StartStopHotKey; break;
+                    case HotKey.PauseResume: key = Properties.Settings.Default.PauseResumeKey; break;
                     default: continue;
                 }
 
@@ -183,7 +189,7 @@ namespace UltimateFishBot
             }
         }
 
-        private void UnregisterHotKeys()
+        public void UnregisterHotKeys()
         {
             // Unregister all hotkeys before closing the form.
             foreach (HotKey hotKey in (HotKey[])Enum.GetValues(typeof(HotKey)))
