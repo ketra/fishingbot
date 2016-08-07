@@ -21,8 +21,7 @@ namespace UltimateFishBot.Classes.BodyParts
         {
             m_manager = manager;
 
-            m_backgroundWorker = new BackgroundWorker();
-            m_backgroundWorker.WorkerSupportsCancellation = true;
+            m_backgroundWorker = new BackgroundWorker() { WorkerSupportsCancellation = true };
             m_backgroundWorker.DoWork += new DoWorkEventHandler(EyeProcess_DoWork);
             m_backgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(EyeProcess_RunWorkerCompleted);
         }
@@ -47,7 +46,7 @@ namespace UltimateFishBot.Classes.BodyParts
                 xPosMax = xPosMin * 3;
                 yPosMin = wowRectangle.Height / 4;
                 yPosMax = yPosMin * 3;
-                System.Console.Out.WriteLine("Using default area");
+                Console.Out.WriteLine("Using default area");
             }
             else
             {
@@ -55,9 +54,9 @@ namespace UltimateFishBot.Classes.BodyParts
                 yPosMin = Properties.Settings.Default.minScanXY.Y;
                 xPosMax = Properties.Settings.Default.maxScanXY.X;
                 yPosMax = Properties.Settings.Default.maxScanXY.Y;
-                System.Console.Out.WriteLine("Using custom area");
+                Console.Out.WriteLine("Using custom area");
             }
-            System.Console.Out.WriteLine("Scanning area: " + xPosMin.ToString() + " , " + yPosMin.ToString() + " , " + xPosMax.ToString() + " , " + yPosMax.ToString() + " , ");
+            Console.Out.WriteLine(string.Format("Scanning area: {0} , {1} , {2} , {3} , ", xPosMin, yPosMin, xPosMax, yPosMax));
             if (Properties.Settings.Default.AlternativeRoute)
                 LookForBobber_Spiral();
             else

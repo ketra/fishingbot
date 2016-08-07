@@ -9,8 +9,8 @@ namespace UltimateFishBot.Forms
 {
     partial class about : Form
     {
-        private string webLink = "http://fishbot.net/";
-        private string gitLink = "https://github.com/UltimateFishbot/UltimateFishbot";
+        private const string webLink = "http://fishbot.net/";
+        private const string gitLink = "https://github.com/UltimateFishbot/UltimateFishbot";
         private static about inst;
         public static about GetForm
         {

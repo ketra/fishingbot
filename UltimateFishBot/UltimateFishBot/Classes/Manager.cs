@@ -104,8 +104,7 @@ namespace UltimateFishBot.Classes
 
         private void InitializeTimer(ref Timer timer, EventHandler handler)
         {
-            timer = new Timer();
-            timer.Enabled = false;
+            timer = new Timer() { Enabled = false };
             timer.Tick += new EventHandler(handler);
         }
 

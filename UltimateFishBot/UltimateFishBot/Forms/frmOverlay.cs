@@ -135,13 +135,12 @@ namespace UltimateFishBot.Forms
 
         private int GetPrimaryMonIdx()
         {
-            Screen[] sc;
-            sc = Screen.AllScreens;
+            Screen[] sc = Screen.AllScreens;
             int idx = 0;
 
             foreach (Screen s in sc)
             {
-                if (s.Bounds.Left == System.Windows.Forms.Screen.PrimaryScreen.Bounds.Left)
+                if (s.Bounds.Left == Screen.PrimaryScreen.Bounds.Left)
                     break;
                 else
                     idx++;
@@ -234,7 +233,7 @@ namespace UltimateFishBot.Forms
 
                 SetClickAction();
                 LeftButtonDown = true;
-                ClickPoint = new Point(System.Windows.Forms.Control.MousePosition.X, System.Windows.Forms.Control.MousePosition.Y);
+                ClickPoint = new Point(Control.MousePosition.X, Control.MousePosition.Y);
 
                 if (RectangleDrawn)
                 {
@@ -599,7 +598,7 @@ namespace UltimateFishBot.Forms
             else if (this.Left < 0)
                 return X + Math.Abs(this.Left);
             else
-                return X - System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width;
+                return X - Screen.PrimaryScreen.Bounds.Width;
         }
 
         private void DrawSelection()

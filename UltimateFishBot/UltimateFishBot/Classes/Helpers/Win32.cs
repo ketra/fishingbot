@@ -92,11 +92,7 @@ namespace UltimateFishBot.Classes.Helpers
             IntPtr Wow = FindWindow("GxWindowClass", "World Of Warcraft");
             Rect Win32ApiRect = new Rect();
             GetWindowRect(Wow, ref Win32ApiRect);
-            Rectangle myRect = new Rectangle();
-            myRect.X = Win32ApiRect.Left;
-            myRect.Y = Win32ApiRect.Top;
-            myRect.Width = (Win32ApiRect.Right - Win32ApiRect.Left);
-            myRect.Height = (Win32ApiRect.Bottom - Win32ApiRect.Top);
+            Rectangle myRect = new Rectangle() { X = Win32ApiRect.Left, Y = Win32ApiRect.Top, Width = (Win32ApiRect.Right - Win32ApiRect.Left), Height = (Win32ApiRect.Bottom - Win32ApiRect.Top) };
             return myRect;
         }
 

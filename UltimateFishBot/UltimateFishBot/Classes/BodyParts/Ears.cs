@@ -14,7 +14,7 @@ namespace UltimateFishBot.Classes.BodyParts
         private Timer listenTimer;
         private Queue<int> m_volumeQueue;
         private Manager m_manager;
-        private int tickrate = 100; //ms pause between sound checks
+        private const int tickrate = 100; //ms pause between sound checks
 
         private const int MAX_VOLUME_QUEUE_LENGTH = 5;
 
@@ -29,8 +29,7 @@ namespace UltimateFishBot.Classes.BodyParts
             else
                 SndDevice = SndDevEnum.GetDefaultAudioEndpoint(EDataFlow.eRender, ERole.eMultimedia);
 
-            listenTimer = new Timer();
-            listenTimer.Interval = tickrate;
+            listenTimer = new Timer() { Interval = tickrate };
             if (Properties.Settings.Default.AverageSound)
             {
                 listenTimer.Tick += new EventHandler(ListenTimerTickAvg);
