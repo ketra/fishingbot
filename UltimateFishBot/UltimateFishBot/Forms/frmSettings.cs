@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using UltimateFishBot.Classes;
 using System.Reflection;
+using System.IO;
 
 namespace UltimateFishBot.Forms
 {
@@ -173,6 +174,8 @@ namespace UltimateFishBot.Forms
             txtSplash.Text          = Properties.Settings.Default.SplashLimit.ToString();
             LoadAudioDevices();
             cbSoundAvg.Checked      = Properties.Settings.Default.AverageSound;
+            ImageSearchcb.Checked = Properties.Settings.Default.ImageSearch;
+            Bobbericontb.Text = Properties.Settings.Default.BobberIcon;
 
             /// Premium Settings
             txtProcName.Text        = Properties.Settings.Default.ProcName;
@@ -245,6 +248,8 @@ namespace UltimateFishBot.Forms
             Properties.Settings.Default.CheckCursor     = cmbCompareIcon.Checked;
             Properties.Settings.Default.AlternativeRoute    = cmbAlternativeRoute.Checked;
             Properties.Settings.Default.customScanArea  = customAreaCheckbox.Checked;
+            Properties.Settings.Default.ImageSearch = ImageSearchcb.Checked;
+            Properties.Settings.Default.BobberIcon = Bobbericontb.Text;
             
             /// Hearing the Fish
             Properties.Settings.Default.SplashLimit     = int.Parse(txtSplash.Text);
@@ -472,6 +477,18 @@ namespace UltimateFishBot.Forms
             {
                 Properties.Settings.Default.Reset();
                 Application.Restart();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fld = new OpenFileDialog();
+            fld.Multiselect = false;
+            DialogResult result = fld.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                Properties.Settings.Default.BobberIcon = fld.FileName;
+                Bobbericontb.Text = fld.FileName;
             }
         }
 

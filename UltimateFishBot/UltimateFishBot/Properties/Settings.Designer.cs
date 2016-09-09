@@ -646,5 +646,29 @@ namespace UltimateFishBot.Properties {
                 this["PauseResumeKey"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ImageSearch {
+            get {
+                return ((bool)(this["ImageSearch"]));
+            }
+            set {
+                this["ImageSearch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Resources\\Bobbericon.jpg")]
+        public string BobberIcon {
+            get {
+                return ((string)(this["BobberIcon"]));
+            }
+            set {
+                this["BobberIcon"] = value;
+            }
+        }
     }
 }
