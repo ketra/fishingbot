@@ -3,6 +3,10 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Threading;
 using UltimateFishBot.Classes.Helpers;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using AForge.Imaging;
+using AForge.Imaging.Filters;
 
 namespace UltimateFishBot.Classes.BodyParts
 {
@@ -57,10 +61,17 @@ namespace UltimateFishBot.Classes.BodyParts
                 Console.Out.WriteLine("Using custom area");
             }
             Console.Out.WriteLine(string.Format("Scanning area: {0} , {1} , {2} , {3} , ", xPosMin, yPosMin, xPosMax, yPosMax));
-            if (Properties.Settings.Default.AlternativeRoute)
-                LookForBobber_Spiral();
+            if (Properties.Settings.Default.ImageSearch)
+            {
+                GetBobber();
+            }
             else
-                LookForBobber();
+            {
+                if (Properties.Settings.Default.AlternativeRoute)
+                    LookForBobber_Spiral();
+                else
+                    LookForBobber();
+            }
         }
 
         private void EyeProcess_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -261,6 +272,70 @@ namespace UltimateFishBot.Classes.BodyParts
                         return false;
 
             return true;
+        }
+        public void GetBobber()
+        {
+            Thread.Sleep(500);
+            System.Drawing.Bitmap bmp = Screenshot();
+            System.Drawing.Bitmap template = (Bitmap)Bitmap.FromFile(@"D:\temp\bobber_export.jpg");
+            const Int32 divisor = 4;
+            const Int32 dev = 3;
+            System.Drawing.Bitmap source = new ResizeNearestNeighbor(bmp.Width / divisor, bmp.Height / divisor).Apply(bmp);
+            System.Drawing.Bitmap test = new ResizeNearestNeighbor(template.Width / divisor, template.Height / divisor).Apply(template);
+            // create template matching algorithm's instance
+            // (set similarity threshold to 92.1%)
+
+            ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0.921f);
+            // find all matchings with specified above similarity
+
+            TemplateMatch[] matchings = tm.ProcessImage(source, test);
+            int testint = 1;
+            // highlight found matchings
+            if (matchings.Length > 0)
+            {
+                BitmapData data = source.LockBits(
+                     new Rectangle(0, 0, source.Width, source.Height),
+                     ImageLockMode.ReadWrite, source.PixelFormat);
+                BitmapData dataorg = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadWrite, bmp.PixelFormat);
+                foreach (TemplateMatch m in matchings)
+                {
+                    Rectangle rec = new Rectangle(m.Rectangle.X * 4, m.Rectangle.Y * 4, m.Rectangle.Width * 4, m.Rectangle.Height * 4);
+                    if (MoveMouseAndCheckCursor((m.Rectangle.X * 4) + 50, (m.Rectangle.Y * 4) + 50))
+                        break;
+                    Drawing.Rectangle(dataorg, rec, Color.Red);
+
+                    //MessageBox.Show(m.Rectangle.Location.ToString());
+                    // do something else with matching
+                }
+                source.UnlockBits(data);
+                bmp.UnlockBits(dataorg);
+                bmp.Save(@"D:\temp\Bobbershot.jpg", ImageFormat.Jpeg);
+            }
+            else
+            {
+                throw new Exception("No Bobber Found");
+            }
+
+
+        }
+        public System.Drawing.Bitmap Screenshot()
+        {
+            
+            //Create a new bitmap.
+            var bmpScreenshot = new Bitmap(wowRectangle.Width,wowRectangle.Height,PixelFormat.Format24bppRgb);
+
+            // Create a graphics object from the bitmap.
+            var gfxScreenshot = Graphics.FromImage(bmpScreenshot);
+
+            // Take the screenshot from the upper left corner to the right bottom corner.
+            gfxScreenshot.CopyFromScreen(wowRectangle.X,
+                                        wowRectangle.Y,
+                                        0,
+                                        0,
+                                        wowRectangle.Size,
+                                        CopyPixelOperation.SourceCopy);
+            bmpScreenshot.Save(@"D:\temp\debugscreen.jpg", ImageFormat.Jpeg);
+            return bmpScreenshot;
         }
     }
 }

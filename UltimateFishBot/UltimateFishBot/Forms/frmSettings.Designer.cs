@@ -45,6 +45,8 @@
             this.LabelSplashThresholdDesc = new System.Windows.Forms.Label();
             this.LabelSplashThreshold = new System.Windows.Forms.Label();
             this.TabPage4 = new System.Windows.Forms.TabPage();
+            this.PHotKey = new System.Windows.Forms.TextBox();
+            this.Pauselb = new System.Windows.Forms.Label();
             this.ModKeycb = new System.Windows.Forms.ComboBox();
             this.ModifierKeylb = new System.Windows.Forms.Label();
             this.txtHotKey = new System.Windows.Forms.TextBox();
@@ -132,8 +134,9 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.chkTxt2speech = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.PHotKey = new System.Windows.Forms.TextBox();
-            this.Pauselb = new System.Windows.Forms.Label();
+            this.ImageSearchcb = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Bobbericontb = new System.Windows.Forms.TextBox();
             this.TabPage3.SuspendLayout();
             this.TabPage4.SuspendLayout();
             this.tabSettings.SuspendLayout();
@@ -343,6 +346,26 @@
             this.TabPage4.TabIndex = 3;
             this.TabPage4.Text = "Premium Settings";
             this.TabPage4.UseVisualStyleBackColor = true;
+            // 
+            // PHotKey
+            // 
+            this.PHotKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PHotKey.Location = new System.Drawing.Point(419, 90);
+            this.PHotKey.Name = "PHotKey";
+            this.PHotKey.ReadOnly = true;
+            this.PHotKey.Size = new System.Drawing.Size(92, 20);
+            this.PHotKey.TabIndex = 56;
+            this.PHotKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PHotKey_KeyDown);
+            // 
+            // Pauselb
+            // 
+            this.Pauselb.AutoSize = true;
+            this.Pauselb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pauselb.Location = new System.Drawing.Point(295, 93);
+            this.Pauselb.Name = "Pauselb";
+            this.Pauselb.Size = new System.Drawing.Size(95, 13);
+            this.Pauselb.TabIndex = 57;
+            this.Pauselb.Text = "Pause HotKey :";
             // 
             // ModKeycb
             // 
@@ -928,6 +951,9 @@
             // 
             // TabPage1
             // 
+            this.TabPage1.Controls.Add(this.Bobbericontb);
+            this.TabPage1.Controls.Add(this.button1);
+            this.TabPage1.Controls.Add(this.ImageSearchcb);
             this.TabPage1.Controls.Add(this.LabelMaxXY);
             this.TabPage1.Controls.Add(this.txtMaxXY);
             this.TabPage1.Controls.Add(this.txtMinXY);
@@ -1220,25 +1246,33 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // PHotKey
+            // ImageSearchcb
             // 
-            this.PHotKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PHotKey.Location = new System.Drawing.Point(419, 90);
-            this.PHotKey.Name = "PHotKey";
-            this.PHotKey.ReadOnly = true;
-            this.PHotKey.Size = new System.Drawing.Size(92, 20);
-            this.PHotKey.TabIndex = 56;
-            this.PHotKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PHotKey_KeyDown);
+            this.ImageSearchcb.AutoSize = true;
+            this.ImageSearchcb.Location = new System.Drawing.Point(212, 204);
+            this.ImageSearchcb.Name = "ImageSearchcb";
+            this.ImageSearchcb.Size = new System.Drawing.Size(125, 17);
+            this.ImageSearchcb.TabIndex = 28;
+            this.ImageSearchcb.Text = "Use search by image";
+            this.ImageSearchcb.UseVisualStyleBackColor = true;
             // 
-            // Pauselb
+            // button1
             // 
-            this.Pauselb.AutoSize = true;
-            this.Pauselb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pauselb.Location = new System.Drawing.Point(295, 93);
-            this.Pauselb.Name = "Pauselb";
-            this.Pauselb.Size = new System.Drawing.Size(95, 13);
-            this.Pauselb.TabIndex = 57;
-            this.Pauselb.Text = "Pause HotKey :";
+            this.button1.Location = new System.Drawing.Point(356, 204);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "set Bobbericon";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Bobbericontb
+            // 
+            this.Bobbericontb.Location = new System.Drawing.Point(356, 233);
+            this.Bobbericontb.Name = "Bobbericontb";
+            this.Bobbericontb.ReadOnly = true;
+            this.Bobbericontb.Size = new System.Drawing.Size(141, 20);
+            this.Bobbericontb.TabIndex = 30;
             // 
             // frmSettings
             // 
@@ -1378,6 +1412,9 @@
         internal System.Windows.Forms.Label ModifierKeylb;
         internal System.Windows.Forms.TextBox PHotKey;
         internal System.Windows.Forms.Label Pauselb;
+        private System.Windows.Forms.TextBox Bobbericontb;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox ImageSearchcb;
 
     }
 }

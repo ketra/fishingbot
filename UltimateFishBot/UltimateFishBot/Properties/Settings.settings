@@ -158,5 +158,11 @@
     <Setting Name="PauseResumeKey" Type="System.Windows.Forms.Keys" Scope="User">
       <Value Profile="(Default)">Ctrl+Shift+P</Value>
     </Setting>
+    <Setting Name="ImageSearch" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BobberIcon" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Resources\Bobbericon.jpg</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
