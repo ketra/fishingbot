@@ -336,32 +336,11 @@ namespace UltimateFishBot.Classes.BodyParts
 
         public System.Drawing.Bitmap Screenshot()
         {
-            ////Create a new bitmap.
-            //var bmpScreenshot = new Bitmap(wowRectangle.Width,wowRectangle.Height,PixelFormat.Format24bppRgb);
-
-            //// Create a graphics object from the bitmap.
-            //var gfxScreenshot = Graphics.FromImage(bmpScreenshot);
-
-            //// Take the screenshot from the upper left corner to the right bottom corner.
-            //gfxScreenshot.CopyFromScreen(wowRectangle.X,
-            //                            wowRectangle.Y,
-            //                            0,
-            //                            0,
-            //                            wowRectangle.Size,
-            //                            CopyPixelOperation.SourceCopy);
-            //bmpScreenshot.Save(@"D:\temp\debugscreen.jpg", ImageFormat.Jpeg);
-
-
-            SizeF scale = new SizeF()
-            {
-                Width = dpi,
-                Height = dpi
-            };
 
             // Scale the rectangle.
             
-            int processWidth = (int)(wowRectangle.Width * scale.Width);
-            int processHeight = (int)(wowRectangle.Height * scale.Height);
+            int processWidth = (int)(wowRectangle.Width * dpi);
+            int processHeight = (int)(wowRectangle.Height * dpi);
 
 
             var bmpScreenshot = new Bitmap(processWidth, processHeight, PixelFormat.Format24bppRgb);
