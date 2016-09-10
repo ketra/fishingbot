@@ -24,6 +24,11 @@ namespace UltimateFishBot.Classes.Helpers
             public Int32 x;
             public Int32 y;
         }
+        public struct DPI
+        {
+            public Int32 x;
+            public Int32 y;
+        }
 
         [StructLayout(LayoutKind.Sequential)]
         public struct CursorInfo
@@ -227,6 +232,29 @@ namespace UltimateFishBot.Classes.Helpers
         {
             return (HiWord << 16) | (LoWord & 0xFFFF);
         }
+        [DllImport("gdi32.dll")]
+        static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
+        public enum DeviceCap
+        {
+            VERTRES = 10,
+            DESKTOPVERTRES = 117,
+
+            // http://pinvoke.net/default.aspx/gdi32/GetDeviceCaps.html
+        }
+
+
+        public static float GetCurrentDPI()
+        {
+            Graphics g = Graphics.FromHwnd(IntPtr.Zero);
+            IntPtr desktop = g.GetHdc();
+            int LogicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.VERTRES);
+            int PhysicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.DESKTOPVERTRES);
+
+            float ScreenScalingFactor = (float)PhysicalScreenHeight / (float)LogicalScreenHeight;
+
+            return ScreenScalingFactor; // 1.25 = 125%
+        }
+        
 
         static private int LastRectX;
         static private int LastRectY;

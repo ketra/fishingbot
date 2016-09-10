@@ -70,6 +70,7 @@
     <Reference Include="CoreAudioApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\CoreAudioApi.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -89,6 +90,7 @@
     <Compile Include="Classes\BodyParts\Hands.cs" />
     <Compile Include="Classes\BodyParts\Legs.cs" />
     <Compile Include="Classes\BodyParts\Mouth.cs" />
+    <Compile Include="Classes\Helpers\rect.cs" />
     <Compile Include="Classes\T2S.cs" />
     <Compile Include="Classes\Helpers\Win32.cs" />
     <Compile Include="Classes\Manager.cs" />
@@ -183,9 +185,6 @@
     <None Include="Resources\online.png" />
     <None Include="Resources\offline.png" />
     <None Include="Resources\fishIcon35x35.bmp" />
-    <Content Include="CoreAudioApi.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="FodyWeavers.xml">
       <SubType>Designer</SubType>
     </Content>
