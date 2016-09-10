@@ -7,6 +7,7 @@ using UltimateFishBot.Classes;
 using UltimateFishBot.Classes.Helpers;
 using UltimateFishBot.Forms;
 using UltimateFishBot.Properties;
+using System.IO;
 
 namespace UltimateFishBot
 {
@@ -34,6 +35,11 @@ namespace UltimateFishBot
             m_manager = new Manager(this);
         }
 
+        Form form2;
+        Point MD = Point.Empty;
+        Rectangle rect = Rectangle.Empty;
+        float dpi = 1f;
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             btnStart.Text       = Translate.GetTranslate("frmMain", "BUTTON_START");
@@ -47,6 +53,21 @@ namespace UltimateFishBot
             this.Text           = "UltimateFishBot - v " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             ReloadHotkeys();
             CheckStatus();
+            LoadBobber();
+        }
+        private void LoadBobber()
+        {
+            try
+            {
+                using (FileStream stream = new FileStream(Properties.Settings.Default.BobberIcon, FileMode.Open, FileAccess.Read))
+                {
+                    pictureBox2.Image = Image.FromStream(stream);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Out.WriteLine(ex.Message);
+            }
         }
 
         private void CheckStatus()
@@ -230,6 +251,78 @@ namespace UltimateFishBot
         private void btnAbout_Click(object sender, EventArgs e)
         {
             about.GetForm.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            dpi = Win32.GetCurrentDPI();
+            Hide();
+            form2 = new Form();
+            form2.BackColor = Color.Wheat;
+            form2.TransparencyKey = form2.BackColor;
+            form2.ControlBox = false;
+            form2.MaximizeBox = false;
+            form2.MinimizeBox = false;
+            form2.FormBorderStyle = FormBorderStyle.None;
+            form2.WindowState = FormWindowState.Maximized;
+            form2.MouseDown += form2_MouseDown;
+            form2.MouseMove += form2_MouseMove;
+            form2.Paint += form2_Paint;
+            form2.MouseUp += form2_MouseUp;
+
+            form2.Show();
+        }
+
+        void form2_MouseDown(object sender, MouseEventArgs e)
+        {
+            MD = e.Location;
+        }
+
+        void form2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            Point MM = e.Location;
+            int mmx = (int)(MM.X * dpi);
+            int mmy = (int)(MM.Y * dpi);
+            int mdx = (int)(MD.X * dpi);
+            int mdy = (int)(MD.Y * dpi);
+            rect = new Rectangle(Math.Min(mdx, mmx), Math.Min(mdy, mmy),
+                                 Math.Abs(mdx - mmx), Math.Abs(mdy - mmy));
+            form2.Invalidate();
+        }
+
+        void form2_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawRectangle(Pens.Red, rect);
+        }
+
+        void form2_MouseUp(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                form2.Hide();
+                Screen scr = Screen.AllScreens[0];
+                Bitmap bmp = new Bitmap(rect.Width, rect.Height);
+                using (Graphics G = Graphics.FromImage(bmp))
+                {
+                    G.CopyFromScreen(rect.Location, Point.Empty, rect.Size,
+                                     CopyPixelOperation.SourceCopy);
+                    SetBobber(bmp);
+                }
+
+            }
+            finally
+            {
+                form2.Close();
+                Show();
+            }
+
+        }
+        public void SetBobber(Image img)
+        {
+            pictureBox2.Image = img;
+            pictureBox2.Update();
+            img.Save(Properties.Settings.Default.BobberIcon, System.Drawing.Imaging.ImageFormat.Jpeg);
         }
 
 

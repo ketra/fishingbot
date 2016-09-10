@@ -39,15 +39,18 @@
             this.btnAbout = new System.Windows.Forms.Button();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSettings
             // 
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Location = new System.Drawing.Point(227, 63);
+            this.btnSettings.Location = new System.Drawing.Point(416, 116);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(92, 23);
+            this.btnSettings.Size = new System.Drawing.Size(169, 42);
             this.btnSettings.TabIndex = 3;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -56,9 +59,10 @@
             // btnClose
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(227, 179);
+            this.btnClose.Location = new System.Drawing.Point(416, 330);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(92, 23);
+            this.btnClose.Size = new System.Drawing.Size(169, 42);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Exit";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -67,9 +71,10 @@
             // btnHowTo
             // 
             this.btnHowTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHowTo.Location = new System.Drawing.Point(227, 121);
+            this.btnHowTo.Location = new System.Drawing.Point(416, 223);
+            this.btnHowTo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnHowTo.Name = "btnHowTo";
-            this.btnHowTo.Size = new System.Drawing.Size(92, 23);
+            this.btnHowTo.Size = new System.Drawing.Size(169, 42);
             this.btnHowTo.TabIndex = 5;
             this.btnHowTo.Text = "How To Use";
             this.btnHowTo.UseVisualStyleBackColor = true;
@@ -79,9 +84,10 @@
             // 
             this.btnStop.Enabled = false;
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStop.Location = new System.Drawing.Point(227, 34);
+            this.btnStop.Location = new System.Drawing.Point(416, 63);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(92, 23);
+            this.btnStop.Size = new System.Drawing.Size(169, 42);
             this.btnStop.TabIndex = 2;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
@@ -90,9 +96,10 @@
             // btnStart
             // 
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStart.Location = new System.Drawing.Point(227, 5);
+            this.btnStart.Location = new System.Drawing.Point(416, 9);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(92, 23);
+            this.btnStart.Size = new System.Drawing.Size(169, 42);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -101,9 +108,10 @@
             // btnStatistics
             // 
             this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistics.Location = new System.Drawing.Point(227, 92);
+            this.btnStatistics.Location = new System.Drawing.Point(416, 170);
+            this.btnStatistics.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Size = new System.Drawing.Size(92, 23);
+            this.btnStatistics.Size = new System.Drawing.Size(169, 42);
             this.btnStatistics.TabIndex = 4;
             this.btnStatistics.Text = "Statistics";
             this.btnStatistics.UseVisualStyleBackColor = true;
@@ -113,9 +121,10 @@
             // 
             this.lblWarn.BackColor = System.Drawing.Color.Transparent;
             this.lblWarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWarn.Location = new System.Drawing.Point(12, 5);
+            this.lblWarn.Location = new System.Drawing.Point(22, 9);
+            this.lblWarn.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblWarn.Name = "lblWarn";
-            this.lblWarn.Size = new System.Drawing.Size(196, 62);
+            this.lblWarn.Size = new System.Drawing.Size(359, 114);
             this.lblWarn.TabIndex = 18;
             this.lblWarn.Text = "** Potential Warnings **";
             this.lblWarn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -123,9 +132,10 @@
             // btnAbout
             // 
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbout.Location = new System.Drawing.Point(227, 150);
+            this.btnAbout.Location = new System.Drawing.Point(416, 277);
+            this.btnAbout.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(92, 23);
+            this.btnAbout.Size = new System.Drawing.Size(169, 42);
             this.btnAbout.TabIndex = 6;
             this.btnAbout.Text = "About";
             this.btnAbout.UseVisualStyleBackColor = true;
@@ -136,9 +146,10 @@
             this.PictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PictureBox1.BackgroundImage")));
             this.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("PictureBox1.InitialImage")));
-            this.PictureBox1.Location = new System.Drawing.Point(12, 5);
+            this.PictureBox1.Location = new System.Drawing.Point(176, 116);
+            this.PictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(196, 156);
+            this.PictureBox1.Size = new System.Drawing.Size(205, 181);
             this.PictureBox1.TabIndex = 16;
             this.PictureBox1.TabStop = false;
             // 
@@ -147,19 +158,31 @@
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.Image = global::UltimateFishBot.Properties.Resources.offline;
             this.lblStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblStatus.Location = new System.Drawing.Point(12, 171);
+            this.lblStatus.Location = new System.Drawing.Point(22, 316);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStatus.Size = new System.Drawing.Size(196, 23);
+            this.lblStatus.Size = new System.Drawing.Size(359, 42);
             this.lblStatus.TabIndex = 14;
             this.lblStatus.Text = "Stopped";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(27, 126);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(140, 171);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 211);
+            this.ClientSize = new System.Drawing.Size(614, 391);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblWarn);
             this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.PictureBox1);
@@ -172,12 +195,14 @@
             this.Controls.Add(this.btnStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.Text = "UltimateFishBot - v 4.1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -194,6 +219,7 @@
         internal System.Windows.Forms.Button btnStatistics;
         private System.Windows.Forms.Label lblWarn;
         internal System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

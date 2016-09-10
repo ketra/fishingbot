@@ -492,5 +492,16 @@ namespace UltimateFishBot.Forms
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            DialogResult result = sfd.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                Bobbericontb.Text = sfd.FileName;
+                Properties.Settings.Default.BobberIcon = sfd.FileName;
+            }
+        }
+
     }
 }
