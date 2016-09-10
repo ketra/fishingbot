@@ -8,6 +8,7 @@ using System.Drawing.Imaging;
 using AForge.Imaging;
 using AForge.Imaging.Filters;
 using System.Diagnostics;
+using System.IO;
 
 namespace UltimateFishBot.Classes.BodyParts
 {
@@ -280,25 +281,26 @@ namespace UltimateFishBot.Classes.BodyParts
         public void GetBobber()
         {
             Thread.Sleep(2000);
+            System.Drawing.Bitmap template = new Bitmap(16, 16, PixelFormat.Format24bppRgb);
             try
             {
                 System.Drawing.Bitmap bmp = Screenshot();
-                System.Drawing.Bitmap template = (Bitmap)Bitmap.FromFile(Properties.Settings.Default.BobberIcon);
-
+                using (FileStream stream = new FileStream(Properties.Settings.Default.BobberIcon, FileMode.Open, FileAccess.Read))
+                {
+                    template = (Bitmap)System.Drawing.Image.FromStream(stream);
+                }
 
                 const Int32 divisor = 8;
-                const Int32 dev = 3;
                 System.Drawing.Bitmap source = new ResizeNearestNeighbor(bmp.Width / divisor, bmp.Height / divisor).Apply(bmp);
                 System.Drawing.Bitmap test = new ResizeNearestNeighbor(template.Width / divisor, template.Height / divisor).Apply(template);
                 // create template matching algorithm's instance
                 // (set similarity threshold to 92.1%)
 
-                ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0.921f);
+                ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0.941f);
 
                 // find all matchings with specified above similarity
 
                 TemplateMatch[] matchings = tm.ProcessImage(source, test);
-                int testint = 1;
                 // highlight found matchings
                 if (matchings.Length > 0)
                 {
@@ -308,8 +310,8 @@ namespace UltimateFishBot.Classes.BodyParts
                     BitmapData dataorg = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadWrite, bmp.PixelFormat);
                     foreach (TemplateMatch m in matchings)
                     {
-                        int placex = (int)(((m.Rectangle.X * divisor) + 75) / dpi);
-                        int placey = (int)(((m.Rectangle.Y * divisor) + 75) / dpi);
+                        int placex = (int)(((m.Rectangle.X * divisor) * 1.05f) / dpi);
+                        int placey = (int)(((m.Rectangle.Y * divisor) * 1.05f) / dpi);
                         Rectangle rec = new Rectangle(m.Rectangle.X * divisor, m.Rectangle.Y * divisor, m.Rectangle.Width * divisor, m.Rectangle.Height * divisor);
                         if (MoveMouseAndCheckCursor(placex,placey))
                             break;
@@ -320,7 +322,7 @@ namespace UltimateFishBot.Classes.BodyParts
                     }
                     source.UnlockBits(data);
                     bmp.UnlockBits(dataorg);
-                    //bmp.Save(@"D:\temp\Bobbershot.jpg", ImageFormat.Jpeg);
+                    bmp.Save(@"D:\temp\Bobbershot.jpg", ImageFormat.Jpeg);
                 }
                 else
                 {
@@ -330,6 +332,10 @@ namespace UltimateFishBot.Classes.BodyParts
             catch (Exception ex)
             {
                 Console.Out.WriteLine(ex.Message);
+            }
+            finally
+            {
+                template.Dispose();  
             }
         }
 
