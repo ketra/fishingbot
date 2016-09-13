@@ -264,11 +264,18 @@ namespace UltimateFishBot
             form2.MaximizeBox = false;
             form2.MinimizeBox = false;
             form2.FormBorderStyle = FormBorderStyle.None;
-            form2.WindowState = FormWindowState.Maximized;
+            //form2.WindowState = FormWindowState.Maximized;
             form2.MouseDown += form2_MouseDown;
             form2.MouseMove += form2_MouseMove;
             form2.Paint += form2_Paint;
             form2.MouseUp += form2_MouseUp;
+            int screenLeft = SystemInformation.VirtualScreen.Left;
+            int screenTop = SystemInformation.VirtualScreen.Top;
+            int screenWidth = SystemInformation.VirtualScreen.Width;
+            int screenHeight = SystemInformation.VirtualScreen.Height;
+
+            form2.Size = new System.Drawing.Size(screenWidth, screenHeight);
+            form2.Location = new System.Drawing.Point(screenLeft, screenTop);
 
             form2.Show();
         }
@@ -301,7 +308,7 @@ namespace UltimateFishBot
             try
             {
                 form2.Hide();
-                Screen scr = Screen.AllScreens[0];
+                Screen[] scr = Screen.AllScreens;
                 Bitmap bmp = new Bitmap(rect.Width, rect.Height);
                 using (Graphics G = Graphics.FromImage(bmp))
                 {
