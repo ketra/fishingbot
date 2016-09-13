@@ -32,14 +32,14 @@ namespace UltimateFishBot.Classes.BodyParts
             };
         }
 
-        public void Cast()
+        public static void Cast()
         {
             Win32.ActivateWow();
             Thread.Sleep(Properties.Settings.Default.CastingDelay);
             Win32.SendKey(Properties.Settings.Default.FishKey);
         }
 
-        public void Loot()
+        public static void Loot()
         {
             Random rand = new Random();
             Win32.SendMouseClick();

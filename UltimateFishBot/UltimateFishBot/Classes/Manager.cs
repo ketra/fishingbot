@@ -84,6 +84,7 @@ namespace UltimateFishBot.Classes
             m_ears          = new Ears(this);
             m_mouth         = new Mouth(m_mainForm);
             m_legs          = new Legs();
+            t2s             = new T2S();
 
             m_actualState   = FishingState.Stopped;
             m_neededActions = NeededAction.None;
@@ -102,7 +103,7 @@ namespace UltimateFishBot.Classes
             ResetTimers();
         }
 
-        private void InitializeTimer(ref Timer timer, EventHandler handler)
+        private static void InitializeTimer(ref Timer timer, EventHandler handler)
         {
             timer = new Timer() { Enabled = false };
             timer.Tick += new EventHandler(handler);
@@ -185,6 +186,14 @@ namespace UltimateFishBot.Classes
                         ++m_fishingStats.totalNotEaredFish;
                         break;
                     }
+                    case FishingState.Idle:
+                    break;
+                    case FishingState.Start:
+                    break;
+                    case FishingState.Paused:
+                    break;
+                    case FishingState.Stopped:
+                    break;
                 }
             }
         }
@@ -272,7 +281,7 @@ namespace UltimateFishBot.Classes
             m_mouth.Say(Translate.GetTranslate("manager", "LABEL_HEAR_FISH"));
 
             SetActualState(FishingState.Looting);
-            m_hands.Loot();
+            Hands.Loot();
             m_fishWaitTime = 0;
             SetActualState(FishingState.Idle);
         }
@@ -302,7 +311,7 @@ namespace UltimateFishBot.Classes
                     // If no other action required, we can cast !
                     m_mouth.Say(Translate.GetTranslate("manager", "LABEL_CASTING"));
                     SetActualState(FishingState.Casting);
-                    m_hands.Cast();
+                    Hands.Cast();
                     break;
                 }
                 case FishingState.Casting:
@@ -331,6 +340,8 @@ namespace UltimateFishBot.Classes
 
                     break;
                 }
+                default:
+                break;
             }
         }
 
@@ -349,6 +360,8 @@ namespace UltimateFishBot.Classes
                     break;
                 case NeededAction.AntiAfkMove:
                     m_legs.DoMovement(t2s);
+                    break;
+                default:
                     break;
             }
 

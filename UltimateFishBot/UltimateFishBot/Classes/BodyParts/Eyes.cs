@@ -266,7 +266,7 @@ namespace UltimateFishBot.Classes.BodyParts
             return true;
         }
 
-        private bool ImageCompare(Bitmap firstImage, Bitmap secondImage)
+        private static bool ImageCompare(Bitmap firstImage, Bitmap secondImage)
         {
             if (firstImage.Width != secondImage.Width || firstImage.Height != secondImage.Height)
                 return false;
@@ -281,20 +281,21 @@ namespace UltimateFishBot.Classes.BodyParts
         public void GetBobber()
         {
             Thread.Sleep(2000);
-            System.Drawing.Bitmap template = new Bitmap(16, 16, PixelFormat.Format24bppRgb);
+            Bitmap template = new Bitmap(16, 16, PixelFormat.Format24bppRgb);
             try
             {
-                System.Drawing.Bitmap bmp = Screenshot();
+                Bitmap bmp = Screenshot();
                 using (FileStream stream = new FileStream(Properties.Settings.Default.BobberIcon, FileMode.Open, FileAccess.Read))
                 {
                     template = (Bitmap)System.Drawing.Image.FromStream(stream);
                 }
 
                 const Int32 divisor = 8;
-                System.Drawing.Bitmap source = new ResizeNearestNeighbor(bmp.Width / divisor, bmp.Height / divisor).Apply(bmp);
-                System.Drawing.Bitmap test = new ResizeNearestNeighbor(template.Width / divisor, template.Height / divisor).Apply(template);
+                Bitmap source = new ResizeNearestNeighbor(bmp.Width / divisor, bmp.Height / divisor).Apply(bmp);
+                Bitmap test = new ResizeNearestNeighbor(template.Width / divisor, template.Height / divisor).Apply(template);
                 // create template matching algorithm's instance
                 // (set similarity threshold to 92.1%)
+
 
                 ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0.941f);
 
@@ -313,7 +314,7 @@ namespace UltimateFishBot.Classes.BodyParts
                         int placex = (int)(((m.Rectangle.X * divisor) * 1.05f) / dpi);
                         int placey = (int)(((m.Rectangle.Y * divisor) * 1.05f) / dpi);
                         Rectangle rec = new Rectangle(m.Rectangle.X * divisor, m.Rectangle.Y * divisor, m.Rectangle.Width * divisor, m.Rectangle.Height * divisor);
-                        if (MoveMouseAndCheckCursor(placex,placey))
+                        if (MoveMouseAndCheckCursor(placex, placey))
                             break;
                         Drawing.Rectangle(dataorg, rec, Color.Red);
 
@@ -322,7 +323,7 @@ namespace UltimateFishBot.Classes.BodyParts
                     }
                     source.UnlockBits(data);
                     bmp.UnlockBits(dataorg);
-                    bmp.Save(@"D:\temp\Bobbershot.jpg", ImageFormat.Jpeg);
+                    //bmp.Save(@"D:\temp\Bobbershot.jpg", ImageFormat.Jpeg);
                 }
                 else
                 {
@@ -331,20 +332,20 @@ namespace UltimateFishBot.Classes.BodyParts
             }
             catch (Exception ex)
             {
-                Console.Out.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
             }
             finally
             {
-                template.Dispose();  
+                template.Dispose();
             }
         }
 
 
-        public System.Drawing.Bitmap Screenshot()
+        public Bitmap Screenshot()
         {
 
             // Scale the rectangle.
-            
+
             int processWidth = (int)(wowRectangle.Width * dpi);
             int processHeight = (int)(wowRectangle.Height * dpi);
 

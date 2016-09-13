@@ -86,6 +86,10 @@ namespace UltimateFishBot.Classes.Helpers
         [DllImport("user32.dll")]
         public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
+        [DllImport("gdi32.dll")]
+        static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
+        public enum DeviceCap { VERTRES = 10, DESKTOPVERTRES = 117, }
+
         private const uint WM_LBUTTONDOWN    = 513;
         private const uint WM_LBUTTONUP      = 514;
 
@@ -170,25 +174,25 @@ namespace UltimateFishBot.Classes.Helpers
                 switch ((ModKey)Properties.Settings.Default.ModifierKey)
                 {
                     case ModKey.alt:
-                        sKeys = "%(" + sKeys + ")"; // %(X) : Use the alt key
+                        sKeys = string.Format("%({0})", sKeys); // %(X) : Use the alt key
                         break;
                     case ModKey.ctrl:
-                        sKeys = "^(" + sKeys + ")";
+                        sKeys = string.Format("^({0})", sKeys);
                         break;
                     case ModKey.shift:
-                        sKeys = "+(" + sKeys + ")";
+                        sKeys = string.Format("+({0})", sKeys);
                         break;
                     case ModKey.alt_shift:
-                        sKeys = "%+(" + sKeys + ")";
+                        sKeys = string.Format("%+({0})", sKeys);
                         break;
                     case ModKey.crtl_alt:
-                        sKeys = "^%(" + sKeys + ")";
+                        sKeys = string.Format("^%({0})", sKeys);
                         break;
                     case ModKey.ctrl_shift:
-                        sKeys = "^+(" + sKeys + ")"; // %(X) : Use the alt key
+                        sKeys = string.Format("^+({0})", sKeys); // %(X) : Use the alt key
                         break;
                     case ModKey.none:
-                        sKeys = "{" + sKeys + "}";  // {X} : Avoid UTF-8 errors (é, è, ...)
+                        sKeys = string.Format("{{{0}}}", sKeys);  // {X} : Avoid UTF-8 errors (é, è, ...)
                         break;
 
                 }
@@ -232,16 +236,6 @@ namespace UltimateFishBot.Classes.Helpers
         {
             return (HiWord << 16) | (LoWord & 0xFFFF);
         }
-        [DllImport("gdi32.dll")]
-        static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
-        public enum DeviceCap
-        {
-            VERTRES = 10,
-            DESKTOPVERTRES = 117,
-
-            // http://pinvoke.net/default.aspx/gdi32/GetDeviceCaps.html
-        }
-
 
         public static float GetCurrentDPI()
         {
