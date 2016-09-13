@@ -90,7 +90,6 @@
     <Compile Include="Classes\BodyParts\Hands.cs" />
     <Compile Include="Classes\BodyParts\Legs.cs" />
     <Compile Include="Classes\BodyParts\Mouth.cs" />
-    <Compile Include="Classes\Helpers\rect.cs" />
     <Compile Include="Classes\T2S.cs" />
     <Compile Include="Classes\Helpers\Win32.cs" />
     <Compile Include="Classes\Manager.cs" />

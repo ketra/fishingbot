@@ -5,7 +5,7 @@ namespace UltimateFishBot.Classes.BodyParts
     class T2S
     {
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
-        bool uset2s;
+        public bool uset2s;
         string lastMessage;
 
         public T2S()

@@ -16,6 +16,7 @@ namespace UltimateFishBot.Classes.BodyParts
 
         public void DoMovement(T2S t2s)
         {
+            
             switch ((Path)Properties.Settings.Default.AntiAfkMoves)
             {
                 case Path.FRONT_BACK:
@@ -31,10 +32,11 @@ namespace UltimateFishBot.Classes.BodyParts
                     MovePath(new Keys[] { Keys.Left, Keys.Right });
                     break;
             }
-            //t2s.Say("Anti A F K");
+            if (t2s.uset2s)
+                t2s.Say("Anti A F K");
         }
 
-        private void MovePath(Keys[] moves)
+        private static void MovePath(Keys[] moves)
         {
             Random rand = new Random();
             foreach (Keys move in moves)
@@ -44,7 +46,7 @@ namespace UltimateFishBot.Classes.BodyParts
             }
         }
 
-        private void SingleMove(Keys move)
+        private static void SingleMove(Keys move)
         {
             Random rand = new Random();          
             Win32.SendKeyboardAction(move, Win32.keyState.KEYDOWN);
