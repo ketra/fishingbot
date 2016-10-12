@@ -108,6 +108,7 @@
             this.LabelDelayCastDesc = new System.Windows.Forms.Label();
             this.LabelDelayCast = new System.Windows.Forms.Label();
             this.TabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.Bobbericontb = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.ImageSearchcb = new System.Windows.Forms.CheckBox();
@@ -137,7 +138,8 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.chkTxt2speech = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PercMtctb = new System.Windows.Forms.TextBox();
             this.TabPage3.SuspendLayout();
             this.TabPage4.SuspendLayout();
             this.tabSettings.SuspendLayout();
@@ -151,10 +153,9 @@
             // LabelScanningDelayDesc
             // 
             this.LabelScanningDelayDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelScanningDelayDesc.Location = new System.Drawing.Point(17, 150);
-            this.LabelScanningDelayDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelScanningDelayDesc.Location = new System.Drawing.Point(9, 81);
             this.LabelScanningDelayDesc.Name = "LabelScanningDelayDesc";
-            this.LabelScanningDelayDesc.Size = new System.Drawing.Size(776, 94);
+            this.LabelScanningDelayDesc.Size = new System.Drawing.Size(423, 51);
             this.LabelScanningDelayDesc.TabIndex = 13;
             this.LabelScanningDelayDesc.Text = "The number of milliseconds to wait before checking if the cursor has changed.  To" +
     " slow and you might not detect the bobber; but a bigger number goes slower.";
@@ -162,19 +163,17 @@
             // txtScanSteps
             // 
             this.txtScanSteps.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScanSteps.Location = new System.Drawing.Point(237, 17);
-            this.txtScanSteps.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtScanSteps.Location = new System.Drawing.Point(129, 9);
             this.txtScanSteps.Name = "txtScanSteps";
-            this.txtScanSteps.Size = new System.Drawing.Size(55, 29);
+            this.txtScanSteps.Size = new System.Drawing.Size(32, 20);
             this.txtScanSteps.TabIndex = 2;
             // 
             // LabelScanningStepsDesc
             // 
             this.LabelScanningStepsDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelScanningStepsDesc.Location = new System.Drawing.Point(11, 59);
-            this.LabelScanningStepsDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelScanningStepsDesc.Location = new System.Drawing.Point(6, 32);
             this.LabelScanningStepsDesc.Name = "LabelScanningStepsDesc";
-            this.LabelScanningStepsDesc.Size = new System.Drawing.Size(776, 78);
+            this.LabelScanningStepsDesc.Size = new System.Drawing.Size(423, 42);
             this.LabelScanningStepsDesc.TabIndex = 10;
             this.LabelScanningStepsDesc.Text = "The greater number of steps, the less likely you are to miss the cursor; but the " +
     "slower your scan will be.";
@@ -183,10 +182,9 @@
             // 
             this.LabelScanningSteps.AutoSize = true;
             this.LabelScanningSteps.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelScanningSteps.Location = new System.Drawing.Point(6, 22);
-            this.LabelScanningSteps.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelScanningSteps.Location = new System.Drawing.Point(3, 12);
             this.LabelScanningSteps.Name = "LabelScanningSteps";
-            this.LabelScanningSteps.Size = new System.Drawing.Size(172, 25);
+            this.LabelScanningSteps.Size = new System.Drawing.Size(100, 13);
             this.LabelScanningSteps.TabIndex = 9;
             this.LabelScanningSteps.Text = "Scanning Steps:";
             // 
@@ -201,10 +199,9 @@
             this.TabPage3.Controls.Add(this.txtSplash);
             this.TabPage3.Controls.Add(this.LabelSplashThresholdDesc);
             this.TabPage3.Controls.Add(this.LabelSplashThreshold);
-            this.TabPage3.Location = new System.Drawing.Point(4, 33);
-            this.TabPage3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TabPage3.Location = new System.Drawing.Point(4, 22);
             this.TabPage3.Name = "TabPage3";
-            this.TabPage3.Size = new System.Drawing.Size(973, 581);
+            this.TabPage3.Size = new System.Drawing.Size(527, 309);
             this.TabPage3.TabIndex = 2;
             this.TabPage3.Text = "Hearing The Fish";
             this.TabPage3.UseVisualStyleBackColor = true;
@@ -212,10 +209,9 @@
             // cbSoundAvg
             // 
             this.cbSoundAvg.AutoSize = true;
-            this.cbSoundAvg.Location = new System.Drawing.Point(26, 329);
-            this.cbSoundAvg.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbSoundAvg.Location = new System.Drawing.Point(14, 178);
             this.cbSoundAvg.Name = "cbSoundAvg";
-            this.cbSoundAvg.Size = new System.Drawing.Size(725, 29);
+            this.cbSoundAvg.Size = new System.Drawing.Size(404, 17);
             this.cbSoundAvg.TabIndex = 20;
             this.cbSoundAvg.Text = "Use averaging method (better in crowded areas, but less chance to catch a fish)";
             this.cbSoundAvg.UseVisualStyleBackColor = true;
@@ -223,28 +219,25 @@
             // lblAudioLevel
             // 
             this.lblAudioLevel.AutoSize = true;
-            this.lblAudioLevel.Location = new System.Drawing.Point(854, 188);
-            this.lblAudioLevel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblAudioLevel.Location = new System.Drawing.Point(466, 102);
             this.lblAudioLevel.Name = "lblAudioLevel";
-            this.lblAudioLevel.Size = new System.Drawing.Size(23, 25);
+            this.lblAudioLevel.Size = new System.Drawing.Size(13, 13);
             this.lblAudioLevel.TabIndex = 19;
             this.lblAudioLevel.Text = "0";
             // 
             // pgbSoundLevel
             // 
-            this.pgbSoundLevel.Location = new System.Drawing.Point(510, 183);
-            this.pgbSoundLevel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pgbSoundLevel.Location = new System.Drawing.Point(278, 99);
             this.pgbSoundLevel.Name = "pgbSoundLevel";
-            this.pgbSoundLevel.Size = new System.Drawing.Size(334, 39);
+            this.pgbSoundLevel.Size = new System.Drawing.Size(182, 21);
             this.pgbSoundLevel.TabIndex = 18;
             // 
             // LabelAudioDeviceDesc
             // 
             this.LabelAudioDeviceDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelAudioDeviceDesc.Location = new System.Drawing.Point(20, 227);
-            this.LabelAudioDeviceDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelAudioDeviceDesc.Location = new System.Drawing.Point(11, 123);
             this.LabelAudioDeviceDesc.Name = "LabelAudioDeviceDesc";
-            this.LabelAudioDeviceDesc.Size = new System.Drawing.Size(776, 135);
+            this.LabelAudioDeviceDesc.Size = new System.Drawing.Size(423, 73);
             this.LabelAudioDeviceDesc.TabIndex = 17;
             this.LabelAudioDeviceDesc.Text = "Select the audio device that WoW is Using.  If the bot cannot \'hear\' the game, it" +
     " will never catch any fish.  If you are unsure, play some music and select each " +
@@ -256,10 +249,9 @@
             this.cmbAudio.FormattingEnabled = true;
             this.cmbAudio.Items.AddRange(new object[] {
             "Default"});
-            this.cmbAudio.Location = new System.Drawing.Point(317, 183);
-            this.cmbAudio.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbAudio.Location = new System.Drawing.Point(173, 99);
             this.cmbAudio.Name = "cmbAudio";
-            this.cmbAudio.Size = new System.Drawing.Size(178, 32);
+            this.cmbAudio.Size = new System.Drawing.Size(99, 21);
             this.cmbAudio.TabIndex = 3;
             this.cmbAudio.SelectedIndexChanged += new System.EventHandler(this.cmbAudio_SelectedIndexChanged);
             // 
@@ -267,29 +259,26 @@
             // 
             this.LabelAudioDevice.AutoSize = true;
             this.LabelAudioDevice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelAudioDevice.Location = new System.Drawing.Point(15, 188);
-            this.LabelAudioDevice.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelAudioDevice.Location = new System.Drawing.Point(8, 102);
             this.LabelAudioDevice.Name = "LabelAudioDevice";
-            this.LabelAudioDevice.Size = new System.Drawing.Size(147, 25);
+            this.LabelAudioDevice.Size = new System.Drawing.Size(87, 13);
             this.LabelAudioDevice.TabIndex = 15;
             this.LabelAudioDevice.Text = "Audio Device:";
             // 
             // txtSplash
             // 
             this.txtSplash.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSplash.Location = new System.Drawing.Point(317, 15);
-            this.txtSplash.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtSplash.Location = new System.Drawing.Point(173, 8);
             this.txtSplash.Name = "txtSplash";
-            this.txtSplash.Size = new System.Drawing.Size(55, 29);
+            this.txtSplash.Size = new System.Drawing.Size(32, 20);
             this.txtSplash.TabIndex = 2;
             // 
             // LabelSplashThresholdDesc
             // 
             this.LabelSplashThresholdDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSplashThresholdDesc.Location = new System.Drawing.Point(20, 57);
-            this.LabelSplashThresholdDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelSplashThresholdDesc.Location = new System.Drawing.Point(11, 31);
             this.LabelSplashThresholdDesc.Name = "LabelSplashThresholdDesc";
-            this.LabelSplashThresholdDesc.Size = new System.Drawing.Size(776, 120);
+            this.LabelSplashThresholdDesc.Size = new System.Drawing.Size(423, 65);
             this.LabelSplashThresholdDesc.TabIndex = 13;
             this.LabelSplashThresholdDesc.Text = "Determines if a given sound is loud enough to be a fish or not.  Too low and the " +
     "bot will mistake non-fish for fish.  Too high and the bot will ignore the real f" +
@@ -299,10 +288,9 @@
             // 
             this.LabelSplashThreshold.AutoSize = true;
             this.LabelSplashThreshold.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSplashThreshold.Location = new System.Drawing.Point(15, 20);
-            this.LabelSplashThreshold.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelSplashThreshold.Location = new System.Drawing.Point(8, 11);
             this.LabelSplashThreshold.Name = "LabelSplashThreshold";
-            this.LabelSplashThreshold.Size = new System.Drawing.Size(189, 25);
+            this.LabelSplashThreshold.Size = new System.Drawing.Size(109, 13);
             this.LabelSplashThreshold.TabIndex = 12;
             this.LabelSplashThreshold.Text = "Splash Threshold:";
             // 
@@ -355,10 +343,9 @@
             this.TabPage4.Controls.Add(this.LabelBaitKey1);
             this.TabPage4.Controls.Add(this.txtBaitKey1);
             this.TabPage4.Controls.Add(this.cbAutoBait);
-            this.TabPage4.Location = new System.Drawing.Point(4, 33);
-            this.TabPage4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TabPage4.Location = new System.Drawing.Point(4, 22);
             this.TabPage4.Name = "TabPage4";
-            this.TabPage4.Size = new System.Drawing.Size(973, 581);
+            this.TabPage4.Size = new System.Drawing.Size(527, 309);
             this.TabPage4.TabIndex = 3;
             this.TabPage4.Text = "Premium Settings";
             this.TabPage4.UseVisualStyleBackColor = true;
@@ -366,11 +353,10 @@
             // PHotKey
             // 
             this.PHotKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PHotKey.Location = new System.Drawing.Point(768, 166);
-            this.PHotKey.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PHotKey.Location = new System.Drawing.Point(419, 90);
             this.PHotKey.Name = "PHotKey";
             this.PHotKey.ReadOnly = true;
-            this.PHotKey.Size = new System.Drawing.Size(165, 29);
+            this.PHotKey.Size = new System.Drawing.Size(92, 20);
             this.PHotKey.TabIndex = 56;
             this.PHotKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PHotKey_KeyDown);
             // 
@@ -378,41 +364,37 @@
             // 
             this.Pauselb.AutoSize = true;
             this.Pauselb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pauselb.Location = new System.Drawing.Point(541, 172);
-            this.Pauselb.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Pauselb.Location = new System.Drawing.Point(295, 93);
             this.Pauselb.Name = "Pauselb";
-            this.Pauselb.Size = new System.Drawing.Size(163, 25);
+            this.Pauselb.Size = new System.Drawing.Size(95, 13);
             this.Pauselb.TabIndex = 57;
             this.Pauselb.Text = "Pause HotKey :";
             // 
             // ModKeycb
             // 
             this.ModKeycb.FormattingEnabled = true;
-            this.ModKeycb.Location = new System.Drawing.Point(768, 207);
-            this.ModKeycb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ModKeycb.Location = new System.Drawing.Point(419, 112);
             this.ModKeycb.Name = "ModKeycb";
-            this.ModKeycb.Size = new System.Drawing.Size(165, 32);
+            this.ModKeycb.Size = new System.Drawing.Size(92, 21);
             this.ModKeycb.TabIndex = 55;
             // 
             // ModifierKeylb
             // 
             this.ModifierKeylb.AutoSize = true;
             this.ModifierKeylb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModifierKeylb.Location = new System.Drawing.Point(541, 212);
-            this.ModifierKeylb.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.ModifierKeylb.Location = new System.Drawing.Point(295, 115);
             this.ModifierKeylb.Name = "ModifierKeylb";
-            this.ModifierKeylb.Size = new System.Drawing.Size(91, 25);
+            this.ModifierKeylb.Size = new System.Drawing.Size(51, 13);
             this.ModifierKeylb.TabIndex = 54;
             this.ModifierKeylb.Text = "modKey";
             // 
             // txtHotKey
             // 
             this.txtHotKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHotKey.Location = new System.Drawing.Point(768, 126);
-            this.txtHotKey.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtHotKey.Location = new System.Drawing.Point(419, 68);
             this.txtHotKey.Name = "txtHotKey";
             this.txtHotKey.ReadOnly = true;
-            this.txtHotKey.Size = new System.Drawing.Size(165, 29);
+            this.txtHotKey.Size = new System.Drawing.Size(92, 20);
             this.txtHotKey.TabIndex = 15;
             this.txtHotKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHotKey_KeyDown);
             // 
@@ -420,60 +402,54 @@
             // 
             this.labelHotKey.AutoSize = true;
             this.labelHotKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHotKey.Location = new System.Drawing.Point(541, 131);
-            this.labelHotKey.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelHotKey.Location = new System.Drawing.Point(295, 71);
             this.labelHotKey.Name = "labelHotKey";
-            this.labelHotKey.Size = new System.Drawing.Size(196, 25);
+            this.labelHotKey.Size = new System.Drawing.Size(118, 13);
             this.labelHotKey.TabIndex = 53;
             this.labelHotKey.Text = "Start/Stop Hotkey :";
             // 
             // txtCharmTime
             // 
             this.txtCharmTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCharmTime.Location = new System.Drawing.Point(823, 338);
-            this.txtCharmTime.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtCharmTime.Location = new System.Drawing.Point(449, 183);
             this.txtCharmTime.Name = "txtCharmTime";
-            this.txtCharmTime.Size = new System.Drawing.Size(52, 29);
+            this.txtCharmTime.Size = new System.Drawing.Size(30, 20);
             this.txtCharmTime.TabIndex = 23;
             this.txtCharmTime.Text = "60";
             // 
             // txtBaitTime
             // 
             this.txtBaitTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBaitTime.Location = new System.Drawing.Point(376, 378);
-            this.txtBaitTime.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBaitTime.Location = new System.Drawing.Point(205, 205);
             this.txtBaitTime.Name = "txtBaitTime";
-            this.txtBaitTime.Size = new System.Drawing.Size(52, 29);
+            this.txtBaitTime.Size = new System.Drawing.Size(30, 20);
             this.txtBaitTime.TabIndex = 25;
             this.txtBaitTime.Text = "5";
             // 
             // txtRaftTime
             // 
             this.txtRaftTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaftTime.Location = new System.Drawing.Point(376, 338);
-            this.txtRaftTime.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtRaftTime.Location = new System.Drawing.Point(205, 183);
             this.txtRaftTime.Name = "txtRaftTime";
-            this.txtRaftTime.Size = new System.Drawing.Size(52, 29);
+            this.txtRaftTime.Size = new System.Drawing.Size(30, 20);
             this.txtRaftTime.TabIndex = 21;
             this.txtRaftTime.Text = "8";
             // 
             // txtLureTime
             // 
             this.txtLureTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLureTime.Location = new System.Drawing.Point(376, 297);
-            this.txtLureTime.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtLureTime.Location = new System.Drawing.Point(205, 161);
             this.txtLureTime.Name = "txtLureTime";
-            this.txtLureTime.Size = new System.Drawing.Size(52, 29);
+            this.txtLureTime.Size = new System.Drawing.Size(30, 20);
             this.txtLureTime.TabIndex = 17;
             this.txtLureTime.Text = "10";
             // 
             // cbCycleThroughBaitList
             // 
             this.cbCycleThroughBaitList.AutoSize = true;
-            this.cbCycleThroughBaitList.Location = new System.Drawing.Point(447, 382);
-            this.cbCycleThroughBaitList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbCycleThroughBaitList.Location = new System.Drawing.Point(244, 207);
             this.cbCycleThroughBaitList.Name = "cbCycleThroughBaitList";
-            this.cbCycleThroughBaitList.Size = new System.Drawing.Size(340, 29);
+            this.cbCycleThroughBaitList.Size = new System.Drawing.Size(189, 17);
             this.cbCycleThroughBaitList.TabIndex = 26;
             this.cbCycleThroughBaitList.Text = "Cycle through the 7 possibles baits";
             this.cbCycleThroughBaitList.UseVisualStyleBackColor = true;
@@ -482,20 +458,18 @@
             // 
             this.LabelBaitKey7.AutoSize = true;
             this.LabelBaitKey7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBaitKey7.Location = new System.Drawing.Point(275, 212);
-            this.LabelBaitKey7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelBaitKey7.Location = new System.Drawing.Point(150, 115);
             this.LabelBaitKey7.Name = "LabelBaitKey7";
-            this.LabelBaitKey7.Size = new System.Drawing.Size(172, 25);
+            this.LabelBaitKey7.Size = new System.Drawing.Size(101, 13);
             this.LabelBaitKey7.TabIndex = 47;
             this.LabelBaitKey7.Text = "WoD Bait Key 7:";
             // 
             // txtBaitKey7
             // 
             this.txtBaitKey7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBaitKey7.Location = new System.Drawing.Point(471, 207);
-            this.txtBaitKey7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBaitKey7.Location = new System.Drawing.Point(257, 112);
             this.txtBaitKey7.Name = "txtBaitKey7";
-            this.txtBaitKey7.Size = new System.Drawing.Size(37, 29);
+            this.txtBaitKey7.Size = new System.Drawing.Size(22, 20);
             this.txtBaitKey7.TabIndex = 14;
             this.txtBaitKey7.Text = "=";
             // 
@@ -503,20 +477,18 @@
             // 
             this.LabelBaitKey6.AutoSize = true;
             this.LabelBaitKey6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBaitKey6.Location = new System.Drawing.Point(275, 172);
-            this.LabelBaitKey6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelBaitKey6.Location = new System.Drawing.Point(150, 93);
             this.LabelBaitKey6.Name = "LabelBaitKey6";
-            this.LabelBaitKey6.Size = new System.Drawing.Size(172, 25);
+            this.LabelBaitKey6.Size = new System.Drawing.Size(101, 13);
             this.LabelBaitKey6.TabIndex = 45;
             this.LabelBaitKey6.Text = "WoD Bait Key 6:";
             // 
             // txtBaitKey6
             // 
             this.txtBaitKey6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBaitKey6.Location = new System.Drawing.Point(471, 166);
-            this.txtBaitKey6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBaitKey6.Location = new System.Drawing.Point(257, 90);
             this.txtBaitKey6.Name = "txtBaitKey6";
-            this.txtBaitKey6.Size = new System.Drawing.Size(37, 29);
+            this.txtBaitKey6.Size = new System.Drawing.Size(22, 20);
             this.txtBaitKey6.TabIndex = 13;
             this.txtBaitKey6.Text = ")";
             // 
@@ -524,20 +496,18 @@
             // 
             this.LabelBaitKey5.AutoSize = true;
             this.LabelBaitKey5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBaitKey5.Location = new System.Drawing.Point(275, 131);
-            this.LabelBaitKey5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelBaitKey5.Location = new System.Drawing.Point(150, 71);
             this.LabelBaitKey5.Name = "LabelBaitKey5";
-            this.LabelBaitKey5.Size = new System.Drawing.Size(172, 25);
+            this.LabelBaitKey5.Size = new System.Drawing.Size(101, 13);
             this.LabelBaitKey5.TabIndex = 43;
             this.LabelBaitKey5.Text = "WoD Bait Key 5:";
             // 
             // txtBaitKey5
             // 
             this.txtBaitKey5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBaitKey5.Location = new System.Drawing.Point(471, 126);
-            this.txtBaitKey5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBaitKey5.Location = new System.Drawing.Point(257, 68);
             this.txtBaitKey5.Name = "txtBaitKey5";
-            this.txtBaitKey5.Size = new System.Drawing.Size(37, 29);
+            this.txtBaitKey5.Size = new System.Drawing.Size(22, 20);
             this.txtBaitKey5.TabIndex = 12;
             this.txtBaitKey5.Text = "0";
             // 
@@ -545,20 +515,18 @@
             // 
             this.LabelBaitKey4.AutoSize = true;
             this.LabelBaitKey4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBaitKey4.Location = new System.Drawing.Point(15, 212);
-            this.LabelBaitKey4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelBaitKey4.Location = new System.Drawing.Point(8, 115);
             this.LabelBaitKey4.Name = "LabelBaitKey4";
-            this.LabelBaitKey4.Size = new System.Drawing.Size(172, 25);
+            this.LabelBaitKey4.Size = new System.Drawing.Size(101, 13);
             this.LabelBaitKey4.TabIndex = 41;
             this.LabelBaitKey4.Text = "WoD Bait Key 4:";
             // 
             // txtBaitKey4
             // 
             this.txtBaitKey4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBaitKey4.Location = new System.Drawing.Point(216, 207);
-            this.txtBaitKey4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBaitKey4.Location = new System.Drawing.Point(118, 112);
             this.txtBaitKey4.Name = "txtBaitKey4";
-            this.txtBaitKey4.Size = new System.Drawing.Size(37, 29);
+            this.txtBaitKey4.Size = new System.Drawing.Size(22, 20);
             this.txtBaitKey4.TabIndex = 11;
             this.txtBaitKey4.Text = "9";
             // 
@@ -566,20 +534,18 @@
             // 
             this.LabelBaitKey3.AutoSize = true;
             this.LabelBaitKey3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBaitKey3.Location = new System.Drawing.Point(15, 172);
-            this.LabelBaitKey3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelBaitKey3.Location = new System.Drawing.Point(8, 93);
             this.LabelBaitKey3.Name = "LabelBaitKey3";
-            this.LabelBaitKey3.Size = new System.Drawing.Size(172, 25);
+            this.LabelBaitKey3.Size = new System.Drawing.Size(101, 13);
             this.LabelBaitKey3.TabIndex = 39;
             this.LabelBaitKey3.Text = "WoD Bait Key 3:";
             // 
             // txtBaitKey3
             // 
             this.txtBaitKey3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBaitKey3.Location = new System.Drawing.Point(216, 166);
-            this.txtBaitKey3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBaitKey3.Location = new System.Drawing.Point(118, 90);
             this.txtBaitKey3.Name = "txtBaitKey3";
-            this.txtBaitKey3.Size = new System.Drawing.Size(37, 29);
+            this.txtBaitKey3.Size = new System.Drawing.Size(22, 20);
             this.txtBaitKey3.TabIndex = 10;
             this.txtBaitKey3.Text = "8";
             // 
@@ -587,30 +553,27 @@
             // 
             this.LabelBaitKey2.AutoSize = true;
             this.LabelBaitKey2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBaitKey2.Location = new System.Drawing.Point(15, 131);
-            this.LabelBaitKey2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelBaitKey2.Location = new System.Drawing.Point(8, 71);
             this.LabelBaitKey2.Name = "LabelBaitKey2";
-            this.LabelBaitKey2.Size = new System.Drawing.Size(172, 25);
+            this.LabelBaitKey2.Size = new System.Drawing.Size(101, 13);
             this.LabelBaitKey2.TabIndex = 37;
             this.LabelBaitKey2.Text = "WoD Bait Key 2:";
             // 
             // txtBaitKey2
             // 
             this.txtBaitKey2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBaitKey2.Location = new System.Drawing.Point(216, 126);
-            this.txtBaitKey2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBaitKey2.Location = new System.Drawing.Point(118, 68);
             this.txtBaitKey2.Name = "txtBaitKey2";
-            this.txtBaitKey2.Size = new System.Drawing.Size(37, 29);
+            this.txtBaitKey2.Size = new System.Drawing.Size(22, 20);
             this.txtBaitKey2.TabIndex = 9;
             this.txtBaitKey2.Text = "7";
             // 
             // cbShiftLoot
             // 
             this.cbShiftLoot.AutoSize = true;
-            this.cbShiftLoot.Location = new System.Drawing.Point(20, 423);
-            this.cbShiftLoot.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbShiftLoot.Location = new System.Drawing.Point(11, 229);
             this.cbShiftLoot.Name = "cbShiftLoot";
-            this.cbShiftLoot.Size = new System.Drawing.Size(460, 29);
+            this.cbShiftLoot.Size = new System.Drawing.Size(254, 17);
             this.cbShiftLoot.TabIndex = 27;
             this.cbShiftLoot.Text = "Shift-Loot? (If AutoLoot is Disabled, Enable This)";
             this.cbShiftLoot.UseVisualStyleBackColor = true;
@@ -618,10 +581,9 @@
             // cbApplyCharm
             // 
             this.cbApplyCharm.AutoSize = true;
-            this.cbApplyCharm.Location = new System.Drawing.Point(447, 342);
-            this.cbApplyCharm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbApplyCharm.Location = new System.Drawing.Point(244, 185);
             this.cbApplyCharm.Name = "cbApplyCharm";
-            this.cbApplyCharm.Size = new System.Drawing.Size(316, 29);
+            this.cbApplyCharm.Size = new System.Drawing.Size(175, 17);
             this.cbApplyCharm.TabIndex = 22;
             this.cbApplyCharm.Text = "Refresh Charm Every X minutes";
             this.cbApplyCharm.UseVisualStyleBackColor = true;
@@ -629,10 +591,9 @@
             // cbApplyRaft
             // 
             this.cbApplyRaft.AutoSize = true;
-            this.cbApplyRaft.Location = new System.Drawing.Point(20, 342);
-            this.cbApplyRaft.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbApplyRaft.Location = new System.Drawing.Point(11, 185);
             this.cbApplyRaft.Name = "cbApplyRaft";
-            this.cbApplyRaft.Size = new System.Drawing.Size(291, 29);
+            this.cbApplyRaft.Size = new System.Drawing.Size(165, 17);
             this.cbApplyRaft.TabIndex = 20;
             this.cbApplyRaft.Text = "Refresh Raft Every X minutes";
             this.cbApplyRaft.UseVisualStyleBackColor = true;
@@ -640,10 +601,9 @@
             // txtCharmKey
             // 
             this.txtCharmKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCharmKey.Location = new System.Drawing.Point(490, 70);
-            this.txtCharmKey.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtCharmKey.Location = new System.Drawing.Point(267, 38);
             this.txtCharmKey.Name = "txtCharmKey";
-            this.txtCharmKey.Size = new System.Drawing.Size(37, 29);
+            this.txtCharmKey.Size = new System.Drawing.Size(22, 20);
             this.txtCharmKey.TabIndex = 7;
             this.txtCharmKey.Text = "5";
             // 
@@ -651,20 +611,18 @@
             // 
             this.LabelCharmKey.AutoSize = true;
             this.LabelCharmKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCharmKey.Location = new System.Drawing.Point(275, 76);
-            this.LabelCharmKey.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelCharmKey.Location = new System.Drawing.Point(150, 41);
             this.LabelCharmKey.Name = "LabelCharmKey";
-            this.LabelCharmKey.Size = new System.Drawing.Size(177, 25);
+            this.LabelCharmKey.Size = new System.Drawing.Size(100, 13);
             this.LabelCharmKey.TabIndex = 30;
             this.LabelCharmKey.Text = "MoP Charm Key:";
             // 
             // txtRaftKey
             // 
             this.txtRaftKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaftKey.Location = new System.Drawing.Point(198, 70);
-            this.txtRaftKey.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtRaftKey.Location = new System.Drawing.Point(108, 38);
             this.txtRaftKey.Name = "txtRaftKey";
-            this.txtRaftKey.Size = new System.Drawing.Size(37, 29);
+            this.txtRaftKey.Size = new System.Drawing.Size(22, 20);
             this.txtRaftKey.TabIndex = 6;
             this.txtRaftKey.Text = "4";
             // 
@@ -672,30 +630,27 @@
             // 
             this.LabelRaftKey.AutoSize = true;
             this.LabelRaftKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelRaftKey.Location = new System.Drawing.Point(9, 76);
-            this.LabelRaftKey.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelRaftKey.Location = new System.Drawing.Point(5, 41);
             this.LabelRaftKey.Name = "LabelRaftKey";
-            this.LabelRaftKey.Size = new System.Drawing.Size(151, 25);
+            this.LabelRaftKey.Size = new System.Drawing.Size(89, 13);
             this.LabelRaftKey.TabIndex = 28;
             this.LabelRaftKey.Text = "MoP Raft Key:";
             // 
             // txtHearthTime
             // 
             this.txtHearthTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHearthTime.Location = new System.Drawing.Point(823, 297);
-            this.txtHearthTime.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtHearthTime.Location = new System.Drawing.Point(449, 161);
             this.txtHearthTime.Name = "txtHearthTime";
-            this.txtHearthTime.Size = new System.Drawing.Size(52, 29);
+            this.txtHearthTime.Size = new System.Drawing.Size(30, 20);
             this.txtHearthTime.TabIndex = 19;
             this.txtHearthTime.Text = "3";
             // 
             // cbAlt
             // 
             this.cbAlt.AutoSize = true;
-            this.cbAlt.Location = new System.Drawing.Point(669, 31);
-            this.cbAlt.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbAlt.Location = new System.Drawing.Point(365, 17);
             this.cbAlt.Name = "cbAlt";
-            this.cbAlt.Size = new System.Drawing.Size(213, 29);
+            this.cbAlt.Size = new System.Drawing.Size(119, 17);
             this.cbAlt.TabIndex = 5;
             this.cbAlt.Text = "Use Alt-Key Modifer";
             this.cbAlt.UseVisualStyleBackColor = true;
@@ -704,10 +659,9 @@
             // cbHearth
             // 
             this.cbHearth.AutoSize = true;
-            this.cbHearth.Location = new System.Drawing.Point(447, 301);
-            this.cbHearth.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbHearth.Location = new System.Drawing.Point(244, 163);
             this.cbHearth.Name = "cbHearth";
-            this.cbHearth.Size = new System.Drawing.Size(302, 29);
+            this.cbHearth.Size = new System.Drawing.Size(170, 17);
             this.cbHearth.TabIndex = 18;
             this.cbHearth.Text = "Hearth To Inn After X Minutes:";
             this.cbHearth.UseVisualStyleBackColor = true;
@@ -715,30 +669,27 @@
             // LabelCustomizeDesc
             // 
             this.LabelCustomizeDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCustomizeDesc.Location = new System.Drawing.Point(15, 249);
-            this.LabelCustomizeDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelCustomizeDesc.Location = new System.Drawing.Point(8, 135);
             this.LabelCustomizeDesc.Name = "LabelCustomizeDesc";
-            this.LabelCustomizeDesc.Size = new System.Drawing.Size(776, 31);
+            this.LabelCustomizeDesc.Size = new System.Drawing.Size(423, 17);
             this.LabelCustomizeDesc.TabIndex = 26;
             this.LabelCustomizeDesc.Text = "Customize shortkeys to avoid rearranging your bars before/after fishing.";
             // 
             // txtProcName
             // 
             this.txtProcName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProcName.Location = new System.Drawing.Point(259, 473);
-            this.txtProcName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtProcName.Location = new System.Drawing.Point(141, 256);
             this.txtProcName.Name = "txtProcName";
-            this.txtProcName.Size = new System.Drawing.Size(464, 29);
+            this.txtProcName.Size = new System.Drawing.Size(255, 20);
             this.txtProcName.TabIndex = 28;
             this.txtProcName.Text = "Wow";
             // 
             // LabelProcessNameDesc
             // 
             this.LabelProcessNameDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelProcessNameDesc.Location = new System.Drawing.Point(15, 513);
-            this.LabelProcessNameDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelProcessNameDesc.Location = new System.Drawing.Point(8, 278);
             this.LabelProcessNameDesc.Name = "LabelProcessNameDesc";
-            this.LabelProcessNameDesc.Size = new System.Drawing.Size(776, 57);
+            this.LabelProcessNameDesc.Size = new System.Drawing.Size(423, 31);
             this.LabelProcessNameDesc.TabIndex = 23;
             this.LabelProcessNameDesc.Text = "The name of the process to activate (this rarely changes) but has been updated wi" +
     "th new expansions in the past.";
@@ -747,20 +698,18 @@
             // 
             this.LabelProcessName.AutoSize = true;
             this.LabelProcessName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelProcessName.Location = new System.Drawing.Point(15, 478);
-            this.LabelProcessName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelProcessName.Location = new System.Drawing.Point(8, 259);
             this.LabelProcessName.Name = "LabelProcessName";
-            this.LabelProcessName.Size = new System.Drawing.Size(219, 25);
+            this.LabelProcessName.Size = new System.Drawing.Size(127, 13);
             this.LabelProcessName.TabIndex = 22;
             this.LabelProcessName.Text = "WoW Process Name:";
             // 
             // cbAutoLure
             // 
             this.cbAutoLure.AutoSize = true;
-            this.cbAutoLure.Location = new System.Drawing.Point(20, 301);
-            this.cbAutoLure.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbAutoLure.Location = new System.Drawing.Point(11, 163);
             this.cbAutoLure.Name = "cbAutoLure";
-            this.cbAutoLure.Size = new System.Drawing.Size(279, 29);
+            this.cbAutoLure.Size = new System.Drawing.Size(155, 17);
             this.cbAutoLure.TabIndex = 16;
             this.cbAutoLure.Text = "Apply Lure Every X minutes";
             this.cbAutoLure.UseVisualStyleBackColor = true;
@@ -768,10 +717,9 @@
             // txtHearthKey
             // 
             this.txtHearthKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHearthKey.Location = new System.Drawing.Point(618, 30);
-            this.txtHearthKey.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtHearthKey.Location = new System.Drawing.Point(337, 16);
             this.txtHearthKey.Name = "txtHearthKey";
-            this.txtHearthKey.Size = new System.Drawing.Size(37, 29);
+            this.txtHearthKey.Size = new System.Drawing.Size(22, 20);
             this.txtHearthKey.TabIndex = 4;
             this.txtHearthKey.Text = "3";
             // 
@@ -779,20 +727,18 @@
             // 
             this.LabelHearthKey.AutoSize = true;
             this.LabelHearthKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHearthKey.Location = new System.Drawing.Point(442, 35);
-            this.LabelHearthKey.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelHearthKey.Location = new System.Drawing.Point(241, 19);
             this.LabelHearthKey.Name = "LabelHearthKey";
-            this.LabelHearthKey.Size = new System.Drawing.Size(127, 25);
+            this.LabelHearthKey.Size = new System.Drawing.Size(74, 13);
             this.LabelHearthKey.TabIndex = 19;
             this.LabelHearthKey.Text = "Hearth Key:";
             // 
             // txtLureKey
             // 
             this.txtLureKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLureKey.Location = new System.Drawing.Point(391, 30);
-            this.txtLureKey.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtLureKey.Location = new System.Drawing.Point(213, 16);
             this.txtLureKey.Name = "txtLureKey";
-            this.txtLureKey.Size = new System.Drawing.Size(37, 29);
+            this.txtLureKey.Size = new System.Drawing.Size(22, 20);
             this.txtLureKey.TabIndex = 3;
             this.txtLureKey.Text = "2";
             // 
@@ -800,20 +746,18 @@
             // 
             this.LabelLureKey.AutoSize = true;
             this.LabelLureKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelLureKey.Location = new System.Drawing.Point(211, 35);
-            this.LabelLureKey.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelLureKey.Location = new System.Drawing.Point(115, 19);
             this.LabelLureKey.Name = "LabelLureKey";
-            this.LabelLureKey.Size = new System.Drawing.Size(106, 25);
+            this.LabelLureKey.Size = new System.Drawing.Size(61, 13);
             this.LabelLureKey.TabIndex = 17;
             this.LabelLureKey.Text = "Lure Key:";
             // 
             // txtFishKey
             // 
             this.txtFishKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFishKey.Location = new System.Drawing.Point(160, 28);
-            this.txtFishKey.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtFishKey.Location = new System.Drawing.Point(87, 15);
             this.txtFishKey.Name = "txtFishKey";
-            this.txtFishKey.Size = new System.Drawing.Size(37, 29);
+            this.txtFishKey.Size = new System.Drawing.Size(22, 20);
             this.txtFishKey.TabIndex = 2;
             this.txtFishKey.Text = "1";
             // 
@@ -821,10 +765,9 @@
             // 
             this.LabelCastKey.AutoSize = true;
             this.LabelCastKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCastKey.Location = new System.Drawing.Point(9, 35);
-            this.LabelCastKey.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelCastKey.Location = new System.Drawing.Point(5, 19);
             this.LabelCastKey.Name = "LabelCastKey";
-            this.LabelCastKey.Size = new System.Drawing.Size(108, 25);
+            this.LabelCastKey.Size = new System.Drawing.Size(61, 13);
             this.LabelCastKey.TabIndex = 15;
             this.LabelCastKey.Text = "Cast Key:";
             // 
@@ -832,30 +775,27 @@
             // 
             this.LabelBaitKey1.AutoSize = true;
             this.LabelBaitKey1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBaitKey1.Location = new System.Drawing.Point(541, 76);
-            this.LabelBaitKey1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelBaitKey1.Location = new System.Drawing.Point(295, 41);
             this.LabelBaitKey1.Name = "LabelBaitKey1";
-            this.LabelBaitKey1.Size = new System.Drawing.Size(172, 25);
+            this.LabelBaitKey1.Size = new System.Drawing.Size(101, 13);
             this.LabelBaitKey1.TabIndex = 35;
             this.LabelBaitKey1.Text = "WoD Bait Key 1:";
             // 
             // txtBaitKey1
             // 
             this.txtBaitKey1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBaitKey1.Location = new System.Drawing.Point(737, 70);
-            this.txtBaitKey1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBaitKey1.Location = new System.Drawing.Point(402, 38);
             this.txtBaitKey1.Name = "txtBaitKey1";
-            this.txtBaitKey1.Size = new System.Drawing.Size(37, 29);
+            this.txtBaitKey1.Size = new System.Drawing.Size(22, 20);
             this.txtBaitKey1.TabIndex = 8;
             this.txtBaitKey1.Text = "6";
             // 
             // cbAutoBait
             // 
             this.cbAutoBait.AutoSize = true;
-            this.cbAutoBait.Location = new System.Drawing.Point(20, 382);
-            this.cbAutoBait.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbAutoBait.Location = new System.Drawing.Point(11, 207);
             this.cbAutoBait.Name = "cbAutoBait";
-            this.cbAutoBait.Size = new System.Drawing.Size(273, 29);
+            this.cbAutoBait.Size = new System.Drawing.Size(152, 17);
             this.cbAutoBait.TabIndex = 24;
             this.cbAutoBait.Text = "Apply Bait Every X minutes";
             this.cbAutoBait.UseVisualStyleBackColor = true;
@@ -864,10 +804,9 @@
             // 
             this.LabelScanningDelay.AutoSize = true;
             this.LabelScanningDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelScanningDelay.Location = new System.Drawing.Point(6, 120);
-            this.LabelScanningDelay.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelScanningDelay.Location = new System.Drawing.Point(3, 65);
             this.LabelScanningDelay.Name = "LabelScanningDelay";
-            this.LabelScanningDelay.Size = new System.Drawing.Size(171, 25);
+            this.LabelScanningDelay.Size = new System.Drawing.Size(100, 13);
             this.LabelScanningDelay.TabIndex = 12;
             this.LabelScanningDelay.Text = "Scanning Delay:";
             // 
@@ -878,10 +817,9 @@
             // buttonSave
             // 
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Location = new System.Drawing.Point(288, 630);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonSave.Location = new System.Drawing.Point(157, 341);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(169, 42);
+            this.buttonSave.Size = new System.Drawing.Size(92, 23);
             this.buttonSave.TabIndex = 50;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -890,10 +828,9 @@
             // txtDelay
             // 
             this.txtDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDelay.Location = new System.Drawing.Point(237, 107);
-            this.txtDelay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtDelay.Location = new System.Drawing.Point(129, 58);
             this.txtDelay.Name = "txtDelay";
-            this.txtDelay.Size = new System.Drawing.Size(55, 29);
+            this.txtDelay.Size = new System.Drawing.Size(32, 20);
             this.txtDelay.TabIndex = 3;
             // 
             // tabSettings
@@ -907,10 +844,9 @@
             this.tabSettings.Controls.Add(this.tabPage7);
             this.tabSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabSettings.Location = new System.Drawing.Point(0, 0);
-            this.tabSettings.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.SelectedIndex = 0;
-            this.tabSettings.Size = new System.Drawing.Size(981, 618);
+            this.tabSettings.Size = new System.Drawing.Size(535, 335);
             this.tabSettings.TabIndex = 1;
             this.tabSettings.SelectedIndexChanged += new System.EventHandler(this.tabSettings_SelectedIndexChanged);
             // 
@@ -925,11 +861,10 @@
             this.TabPage2.Controls.Add(this.txtCastDelay);
             this.TabPage2.Controls.Add(this.LabelDelayCastDesc);
             this.TabPage2.Controls.Add(this.LabelDelayCast);
-            this.TabPage2.Location = new System.Drawing.Point(4, 33);
-            this.TabPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TabPage2.Location = new System.Drawing.Point(4, 22);
             this.TabPage2.Name = "TabPage2";
-            this.TabPage2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.TabPage2.Size = new System.Drawing.Size(973, 581);
+            this.TabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TabPage2.Size = new System.Drawing.Size(527, 309);
             this.TabPage2.TabIndex = 1;
             this.TabPage2.Text = "General Fishing";
             this.TabPage2.UseVisualStyleBackColor = true;
@@ -937,19 +872,17 @@
             // txtFishWait
             // 
             this.txtFishWait.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFishWait.Location = new System.Drawing.Point(281, 142);
-            this.txtFishWait.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtFishWait.Location = new System.Drawing.Point(153, 77);
             this.txtFishWait.Name = "txtFishWait";
-            this.txtFishWait.Size = new System.Drawing.Size(94, 29);
+            this.txtFishWait.Size = new System.Drawing.Size(53, 20);
             this.txtFishWait.TabIndex = 3;
             // 
             // LabelFishWaitDesc
             // 
             this.LabelFishWaitDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelFishWaitDesc.Location = new System.Drawing.Point(20, 185);
-            this.LabelFishWaitDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelFishWaitDesc.Location = new System.Drawing.Point(11, 100);
             this.LabelFishWaitDesc.Name = "LabelFishWaitDesc";
-            this.LabelFishWaitDesc.Size = new System.Drawing.Size(776, 57);
+            this.LabelFishWaitDesc.Size = new System.Drawing.Size(423, 31);
             this.LabelFishWaitDesc.TabIndex = 19;
             this.LabelFishWaitDesc.Text = "The number of milliseconds to listen for a fish before giving up. Too long decrea" +
     "se bots effectiveness, too short and you miss fish.";
@@ -958,29 +891,26 @@
             // 
             this.LabelDelayLooting.AutoSize = true;
             this.LabelDelayLooting.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDelayLooting.Location = new System.Drawing.Point(15, 266);
-            this.LabelDelayLooting.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelDelayLooting.Location = new System.Drawing.Point(8, 144);
             this.LabelDelayLooting.Name = "LabelDelayLooting";
-            this.LabelDelayLooting.Size = new System.Drawing.Size(203, 25);
+            this.LabelDelayLooting.Size = new System.Drawing.Size(120, 13);
             this.LabelDelayLooting.TabIndex = 18;
             this.LabelDelayLooting.Text = "Delay After Looting:";
             // 
             // txtLootingDelay
             // 
             this.txtLootingDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLootingDelay.Location = new System.Drawing.Point(281, 260);
-            this.txtLootingDelay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtLootingDelay.Location = new System.Drawing.Point(153, 141);
             this.txtLootingDelay.Name = "txtLootingDelay";
-            this.txtLootingDelay.Size = new System.Drawing.Size(94, 29);
+            this.txtLootingDelay.Size = new System.Drawing.Size(53, 20);
             this.txtLootingDelay.TabIndex = 4;
             // 
             // LabelDelayLootingDesc
             // 
             this.LabelDelayLootingDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDelayLootingDesc.Location = new System.Drawing.Point(20, 303);
-            this.LabelDelayLootingDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelDelayLootingDesc.Location = new System.Drawing.Point(11, 164);
             this.LabelDelayLootingDesc.Name = "LabelDelayLootingDesc";
-            this.LabelDelayLootingDesc.Size = new System.Drawing.Size(776, 37);
+            this.LabelDelayLootingDesc.Size = new System.Drawing.Size(423, 20);
             this.LabelDelayLootingDesc.TabIndex = 16;
             this.LabelDelayLootingDesc.Text = "The number of milliseconds to wait after looting a fish.";
             // 
@@ -988,29 +918,26 @@
             // 
             this.LabelFishWait.AutoSize = true;
             this.LabelFishWait.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelFishWait.Location = new System.Drawing.Point(15, 148);
-            this.LabelFishWait.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelFishWait.Location = new System.Drawing.Point(8, 80);
             this.LabelFishWait.Name = "LabelFishWait";
-            this.LabelFishWait.Size = new System.Drawing.Size(161, 25);
+            this.LabelFishWait.Size = new System.Drawing.Size(94, 13);
             this.LabelFishWait.TabIndex = 15;
             this.LabelFishWait.Text = "Fish Wait Limit:";
             // 
             // txtCastDelay
             // 
             this.txtCastDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCastDelay.Location = new System.Drawing.Point(281, 22);
-            this.txtCastDelay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtCastDelay.Location = new System.Drawing.Point(153, 12);
             this.txtCastDelay.Name = "txtCastDelay";
-            this.txtCastDelay.Size = new System.Drawing.Size(94, 29);
+            this.txtCastDelay.Size = new System.Drawing.Size(53, 20);
             this.txtCastDelay.TabIndex = 2;
             // 
             // LabelDelayCastDesc
             // 
             this.LabelDelayCastDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDelayCastDesc.Location = new System.Drawing.Point(20, 65);
-            this.LabelDelayCastDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelDelayCastDesc.Location = new System.Drawing.Point(11, 35);
             this.LabelDelayCastDesc.Name = "LabelDelayCastDesc";
-            this.LabelDelayCastDesc.Size = new System.Drawing.Size(776, 57);
+            this.LabelDelayCastDesc.Size = new System.Drawing.Size(423, 31);
             this.LabelDelayCastDesc.TabIndex = 13;
             this.LabelDelayCastDesc.Text = "The number of milliseconds to wait after the cast before searching. Too short and" +
     " you\'ll skip the bobber, too long and you\'ll waste time.";
@@ -1019,15 +946,16 @@
             // 
             this.LabelDelayCast.AutoSize = true;
             this.LabelDelayCast.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDelayCast.Location = new System.Drawing.Point(15, 28);
-            this.LabelDelayCast.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelDelayCast.Location = new System.Drawing.Point(8, 15);
             this.LabelDelayCast.Name = "LabelDelayCast";
-            this.LabelDelayCast.Size = new System.Drawing.Size(177, 25);
+            this.LabelDelayCast.Size = new System.Drawing.Size(103, 13);
             this.LabelDelayCast.TabIndex = 12;
             this.LabelDelayCast.Text = "Delay After Cast:";
             // 
             // TabPage1
             // 
+            this.TabPage1.Controls.Add(this.PercMtctb);
+            this.TabPage1.Controls.Add(this.label1);
             this.TabPage1.Controls.Add(this.button2);
             this.TabPage1.Controls.Add(this.Bobbericontb);
             this.TabPage1.Controls.Add(this.button1);
@@ -1052,30 +980,38 @@
             this.TabPage1.Controls.Add(this.txtScanSteps);
             this.TabPage1.Controls.Add(this.LabelScanningStepsDesc);
             this.TabPage1.Controls.Add(this.LabelScanningSteps);
-            this.TabPage1.Location = new System.Drawing.Point(4, 33);
-            this.TabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TabPage1.Location = new System.Drawing.Point(4, 22);
             this.TabPage1.Name = "TabPage1";
-            this.TabPage1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.TabPage1.Size = new System.Drawing.Size(973, 581);
+            this.TabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TabPage1.Size = new System.Drawing.Size(527, 309);
             this.TabPage1.TabIndex = 0;
             this.TabPage1.Text = "Finding The Cursor";
             this.TabPage1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(462, 204);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(64, 23);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "Saveloc";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Bobbericontb
             // 
-            this.Bobbericontb.Location = new System.Drawing.Point(653, 430);
-            this.Bobbericontb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Bobbericontb.Location = new System.Drawing.Point(356, 233);
             this.Bobbericontb.Name = "Bobbericontb";
             this.Bobbericontb.ReadOnly = true;
-            this.Bobbericontb.Size = new System.Drawing.Size(255, 29);
+            this.Bobbericontb.Size = new System.Drawing.Size(141, 20);
             this.Bobbericontb.TabIndex = 30;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(653, 377);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Location = new System.Drawing.Point(356, 204);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 42);
+            this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 29;
             this.button1.Text = "set Bobbericon";
             this.button1.UseVisualStyleBackColor = true;
@@ -1084,10 +1020,9 @@
             // ImageSearchcb
             // 
             this.ImageSearchcb.AutoSize = true;
-            this.ImageSearchcb.Location = new System.Drawing.Point(389, 377);
-            this.ImageSearchcb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ImageSearchcb.Location = new System.Drawing.Point(212, 204);
             this.ImageSearchcb.Name = "ImageSearchcb";
-            this.ImageSearchcb.Size = new System.Drawing.Size(221, 29);
+            this.ImageSearchcb.Size = new System.Drawing.Size(125, 17);
             this.ImageSearchcb.TabIndex = 28;
             this.ImageSearchcb.Text = "Use search by image";
             this.ImageSearchcb.UseVisualStyleBackColor = true;
@@ -1095,39 +1030,35 @@
             // LabelMaxXY
             // 
             this.LabelMaxXY.AutoSize = true;
-            this.LabelMaxXY.Location = new System.Drawing.Point(552, 314);
-            this.LabelMaxXY.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelMaxXY.Location = new System.Drawing.Point(301, 170);
             this.LabelMaxXY.Name = "LabelMaxXY";
-            this.LabelMaxXY.Size = new System.Drawing.Size(90, 25);
+            this.LabelMaxXY.Size = new System.Drawing.Size(49, 13);
             this.LabelMaxXY.TabIndex = 27;
             this.LabelMaxXY.Text = "End X,Y:";
             // 
             // txtMaxXY
             // 
-            this.txtMaxXY.Location = new System.Drawing.Point(653, 306);
-            this.txtMaxXY.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtMaxXY.Location = new System.Drawing.Point(356, 166);
             this.txtMaxXY.Name = "txtMaxXY";
             this.txtMaxXY.ReadOnly = true;
-            this.txtMaxXY.Size = new System.Drawing.Size(180, 29);
+            this.txtMaxXY.Size = new System.Drawing.Size(100, 20);
             this.txtMaxXY.TabIndex = 26;
             // 
             // txtMinXY
             // 
             this.txtMinXY.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinXY.Location = new System.Drawing.Point(354, 306);
-            this.txtMinXY.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtMinXY.Location = new System.Drawing.Point(193, 166);
             this.txtMinXY.Name = "txtMinXY";
             this.txtMinXY.ReadOnly = true;
-            this.txtMinXY.Size = new System.Drawing.Size(180, 29);
+            this.txtMinXY.Size = new System.Drawing.Size(100, 20);
             this.txtMinXY.TabIndex = 26;
             // 
             // LabelMinXY
             // 
             this.LabelMinXY.AutoSize = true;
-            this.LabelMinXY.Location = new System.Drawing.Point(248, 312);
-            this.LabelMinXY.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelMinXY.Location = new System.Drawing.Point(135, 169);
             this.LabelMinXY.Name = "LabelMinXY";
-            this.LabelMinXY.Size = new System.Drawing.Size(96, 25);
+            this.LabelMinXY.Size = new System.Drawing.Size(52, 13);
             this.LabelMinXY.TabIndex = 25;
             this.LabelMinXY.Text = "Start X,Y:";
             // 
@@ -1135,10 +1066,9 @@
             // 
             this.btnSetScanArea.Enabled = false;
             this.btnSetScanArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetScanArea.Location = new System.Drawing.Point(11, 303);
-            this.btnSetScanArea.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSetScanArea.Location = new System.Drawing.Point(6, 164);
             this.btnSetScanArea.Name = "btnSetScanArea";
-            this.btnSetScanArea.Size = new System.Drawing.Size(226, 42);
+            this.btnSetScanArea.Size = new System.Drawing.Size(123, 23);
             this.btnSetScanArea.TabIndex = 24;
             this.btnSetScanArea.Text = "Set Scanning Area";
             this.btnSetScanArea.UseVisualStyleBackColor = true;
@@ -1147,10 +1077,9 @@
             // customAreaCheckbox
             // 
             this.customAreaCheckbox.AutoSize = true;
-            this.customAreaCheckbox.Location = new System.Drawing.Point(884, 273);
-            this.customAreaCheckbox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.customAreaCheckbox.Location = new System.Drawing.Point(482, 148);
             this.customAreaCheckbox.Name = "customAreaCheckbox";
-            this.customAreaCheckbox.Size = new System.Drawing.Size(22, 21);
+            this.customAreaCheckbox.Size = new System.Drawing.Size(15, 14);
             this.customAreaCheckbox.TabIndex = 23;
             this.customAreaCheckbox.UseVisualStyleBackColor = true;
             this.customAreaCheckbox.CheckedChanged += new System.EventHandler(this.customAreaCheckbox_CheckedChanged);
@@ -1159,30 +1088,27 @@
             // 
             this.LabelScanArea.AutoSize = true;
             this.LabelScanArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelScanArea.Location = new System.Drawing.Point(6, 273);
-            this.LabelScanArea.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelScanArea.Location = new System.Drawing.Point(3, 148);
             this.LabelScanArea.Name = "LabelScanArea";
-            this.LabelScanArea.Size = new System.Drawing.Size(762, 25);
+            this.LabelScanArea.Size = new System.Drawing.Size(451, 13);
             this.LabelScanArea.TabIndex = 22;
             this.LabelScanArea.Text = "Scanning Area (if disabled the scanning area will be calculated automatically):";
             // 
             // LabelAlternativeRoute
             // 
             this.LabelAlternativeRoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelAlternativeRoute.Location = new System.Drawing.Point(6, 414);
-            this.LabelAlternativeRoute.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelAlternativeRoute.Location = new System.Drawing.Point(2, 219);
             this.LabelAlternativeRoute.Name = "LabelAlternativeRoute";
-            this.LabelAlternativeRoute.Size = new System.Drawing.Size(776, 31);
+            this.LabelAlternativeRoute.Size = new System.Drawing.Size(423, 17);
             this.LabelAlternativeRoute.TabIndex = 21;
             this.LabelAlternativeRoute.Text = "An alternative route for bobber searching.";
             // 
             // cmbAlternativeRoute
             // 
             this.cmbAlternativeRoute.AutoSize = true;
-            this.cmbAlternativeRoute.Location = new System.Drawing.Point(9, 377);
-            this.cmbAlternativeRoute.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbAlternativeRoute.Location = new System.Drawing.Point(5, 204);
             this.cmbAlternativeRoute.Name = "cmbAlternativeRoute";
-            this.cmbAlternativeRoute.Size = new System.Drawing.Size(137, 29);
+            this.cmbAlternativeRoute.Size = new System.Drawing.Size(79, 17);
             this.cmbAlternativeRoute.TabIndex = 20;
             this.cmbAlternativeRoute.Text = "Spiral route";
             this.cmbAlternativeRoute.UseVisualStyleBackColor = true;
@@ -1190,10 +1116,9 @@
             // LabelCheckCursorIcon
             // 
             this.LabelCheckCursorIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCheckCursorIcon.Location = new System.Drawing.Point(6, 487);
-            this.LabelCheckCursorIcon.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelCheckCursorIcon.Location = new System.Drawing.Point(3, 264);
             this.LabelCheckCursorIcon.Name = "LabelCheckCursorIcon";
-            this.LabelCheckCursorIcon.Size = new System.Drawing.Size(776, 54);
+            this.LabelCheckCursorIcon.Size = new System.Drawing.Size(423, 29);
             this.LabelCheckCursorIcon.TabIndex = 19;
             this.LabelCheckCursorIcon.Text = "Specify if the bot must check the icon before fishing. Avoid clicking when it\'s n" +
     "ot a bobber. May not work on some computer, disable if the bot don\'t find your b" +
@@ -1202,10 +1127,9 @@
             // cmbCompareIcon
             // 
             this.cmbCompareIcon.AutoSize = true;
-            this.cmbCompareIcon.Location = new System.Drawing.Point(9, 450);
-            this.cmbCompareIcon.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbCompareIcon.Location = new System.Drawing.Point(5, 244);
             this.cmbCompareIcon.Name = "cmbCompareIcon";
-            this.cmbCompareIcon.Size = new System.Drawing.Size(201, 29);
+            this.cmbCompareIcon.Size = new System.Drawing.Size(114, 17);
             this.cmbCompareIcon.TabIndex = 5;
             this.cmbCompareIcon.Text = "Check Cursor Icon";
             this.cmbCompareIcon.UseVisualStyleBackColor = true;
@@ -1213,19 +1137,17 @@
             // txtRetries
             // 
             this.txtRetries.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRetries.Location = new System.Drawing.Point(237, 198);
-            this.txtRetries.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtRetries.Location = new System.Drawing.Point(129, 107);
             this.txtRetries.Name = "txtRetries";
-            this.txtRetries.Size = new System.Drawing.Size(55, 29);
+            this.txtRetries.Size = new System.Drawing.Size(32, 20);
             this.txtRetries.TabIndex = 4;
             // 
             // LabelScanningRetriesDesc
             // 
             this.LabelScanningRetriesDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelScanningRetriesDesc.Location = new System.Drawing.Point(11, 240);
-            this.LabelScanningRetriesDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelScanningRetriesDesc.Location = new System.Drawing.Point(6, 130);
             this.LabelScanningRetriesDesc.Name = "LabelScanningRetriesDesc";
-            this.LabelScanningRetriesDesc.Size = new System.Drawing.Size(776, 70);
+            this.LabelScanningRetriesDesc.Size = new System.Drawing.Size(423, 38);
             this.LabelScanningRetriesDesc.TabIndex = 16;
             this.LabelScanningRetriesDesc.Text = "How many times to run the search pattern.";
             // 
@@ -1233,10 +1155,9 @@
             // 
             this.LabelScanningRetries.AutoSize = true;
             this.LabelScanningRetries.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelScanningRetries.Location = new System.Drawing.Point(6, 203);
-            this.LabelScanningRetries.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelScanningRetries.Location = new System.Drawing.Point(3, 110);
             this.LabelScanningRetries.Name = "LabelScanningRetries";
-            this.LabelScanningRetries.Size = new System.Drawing.Size(183, 25);
+            this.LabelScanningRetries.Size = new System.Drawing.Size(108, 13);
             this.LabelScanningRetries.TabIndex = 15;
             this.LabelScanningRetries.Text = "Scanning Retries:";
             // 
@@ -1246,11 +1167,10 @@
             this.tabPage6.Controls.Add(this.txtAntiAfkTimer);
             this.tabPage6.Controls.Add(this.cbAntiAfk);
             this.tabPage6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabPage6.Location = new System.Drawing.Point(4, 33);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage6.Size = new System.Drawing.Size(973, 581);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Size = new System.Drawing.Size(527, 309);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Anti-Afk";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1261,29 +1181,26 @@
             this.cmbMovements.FormattingEnabled = true;
             this.cmbMovements.Items.AddRange(new object[] {
             "Default"});
-            this.cmbMovements.Location = new System.Drawing.Point(281, 240);
-            this.cmbMovements.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbMovements.Location = new System.Drawing.Point(153, 130);
             this.cmbMovements.Name = "cmbMovements";
-            this.cmbMovements.Size = new System.Drawing.Size(178, 32);
+            this.cmbMovements.Size = new System.Drawing.Size(99, 21);
             this.cmbMovements.TabIndex = 4;
             // 
             // txtAntiAfkTimer
             // 
             this.txtAntiAfkTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAntiAfkTimer.Location = new System.Drawing.Point(662, 194);
-            this.txtAntiAfkTimer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtAntiAfkTimer.Location = new System.Drawing.Point(361, 105);
             this.txtAntiAfkTimer.Name = "txtAntiAfkTimer";
-            this.txtAntiAfkTimer.Size = new System.Drawing.Size(52, 29);
+            this.txtAntiAfkTimer.Size = new System.Drawing.Size(30, 20);
             this.txtAntiAfkTimer.TabIndex = 3;
             this.txtAntiAfkTimer.Text = "10";
             // 
             // cbAntiAfk
             // 
             this.cbAntiAfk.AutoSize = true;
-            this.cbAntiAfk.Location = new System.Drawing.Point(281, 198);
-            this.cbAntiAfk.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbAntiAfk.Location = new System.Drawing.Point(153, 107);
             this.cbAntiAfk.Name = "cbAntiAfk";
-            this.cbAntiAfk.Size = new System.Drawing.Size(319, 29);
+            this.cbAntiAfk.Size = new System.Drawing.Size(177, 17);
             this.cbAntiAfk.TabIndex = 2;
             this.cbAntiAfk.Text = "Enable Anti-Afk every X minutes";
             this.cbAntiAfk.UseVisualStyleBackColor = true;
@@ -1293,11 +1210,10 @@
             this.TabPage5.Controls.Add(this.cmbLanguage);
             this.TabPage5.Controls.Add(this.labelLanguageDesc);
             this.TabPage5.Controls.Add(this.labelLanguage);
-            this.TabPage5.Location = new System.Drawing.Point(4, 33);
-            this.TabPage5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TabPage5.Location = new System.Drawing.Point(4, 22);
             this.TabPage5.Name = "TabPage5";
-            this.TabPage5.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.TabPage5.Size = new System.Drawing.Size(973, 581);
+            this.TabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TabPage5.Size = new System.Drawing.Size(527, 309);
             this.TabPage5.TabIndex = 4;
             this.TabPage5.Text = "Language";
             this.TabPage5.UseVisualStyleBackColor = true;
@@ -1308,19 +1224,17 @@
             this.cmbLanguage.FormattingEnabled = true;
             this.cmbLanguage.Items.AddRange(new object[] {
             "Default"});
-            this.cmbLanguage.Location = new System.Drawing.Point(391, 201);
-            this.cmbLanguage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbLanguage.Location = new System.Drawing.Point(213, 109);
             this.cmbLanguage.Name = "cmbLanguage";
-            this.cmbLanguage.Size = new System.Drawing.Size(178, 32);
+            this.cmbLanguage.Size = new System.Drawing.Size(99, 21);
             this.cmbLanguage.TabIndex = 2;
             // 
             // labelLanguageDesc
             // 
             this.labelLanguageDesc.AutoSize = true;
-            this.labelLanguageDesc.Location = new System.Drawing.Point(216, 246);
-            this.labelLanguageDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelLanguageDesc.Location = new System.Drawing.Point(118, 133);
             this.labelLanguageDesc.Name = "labelLanguageDesc";
-            this.labelLanguageDesc.Size = new System.Drawing.Size(497, 50);
+            this.labelLanguageDesc.Size = new System.Drawing.Size(271, 26);
             this.labelLanguageDesc.TabIndex = 16;
             this.labelLanguageDesc.Text = "Select the language file that you want to use.\r\nLanguage XML Files must be found " +
     "in Resources folder.";
@@ -1328,10 +1242,9 @@
             // labelLanguage
             // 
             this.labelLanguage.AutoSize = true;
-            this.labelLanguage.Location = new System.Drawing.Point(268, 209);
-            this.labelLanguage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelLanguage.Location = new System.Drawing.Point(146, 113);
             this.labelLanguage.Name = "labelLanguage";
-            this.labelLanguage.Size = new System.Drawing.Size(111, 25);
+            this.labelLanguage.Size = new System.Drawing.Size(61, 13);
             this.labelLanguage.TabIndex = 0;
             this.labelLanguage.Text = "Language :";
             // 
@@ -1339,21 +1252,19 @@
             // 
             this.tabPage7.Controls.Add(this.btnReset);
             this.tabPage7.Controls.Add(this.chkTxt2speech);
-            this.tabPage7.Location = new System.Drawing.Point(4, 33);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage7.Size = new System.Drawing.Size(973, 581);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage7.Size = new System.Drawing.Size(527, 309);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Other";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(611, 517);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnReset.Location = new System.Drawing.Point(333, 280);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(341, 42);
+            this.btnReset.Size = new System.Drawing.Size(186, 23);
             this.btnReset.TabIndex = 19;
             this.btnReset.Text = "Reset all settings to default";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -1362,10 +1273,9 @@
             // chkTxt2speech
             // 
             this.chkTxt2speech.AutoSize = true;
-            this.chkTxt2speech.Location = new System.Drawing.Point(15, 31);
-            this.chkTxt2speech.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.chkTxt2speech.Location = new System.Drawing.Point(8, 17);
             this.chkTxt2speech.Name = "chkTxt2speech";
-            this.chkTxt2speech.Size = new System.Drawing.Size(609, 29);
+            this.chkTxt2speech.Size = new System.Drawing.Size(332, 17);
             this.chkTxt2speech.TabIndex = 18;
             this.chkTxt2speech.Text = "Use Text2Speech alerts (Highly experimental, may cause issues!)";
             this.chkTxt2speech.UseVisualStyleBackColor = true;
@@ -1373,36 +1283,40 @@
             // buttonCancel
             // 
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancel.Location = new System.Drawing.Point(468, 630);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonCancel.Location = new System.Drawing.Point(255, 341);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(169, 42);
+            this.buttonCancel.Size = new System.Drawing.Size(92, 23);
             this.buttonCancel.TabIndex = 51;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // button2
+            // label1
             // 
-            this.button2.Location = new System.Drawing.Point(847, 377);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 42);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Saveloc";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(128, 236);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Match in %:";
+            // 
+            // PercMtctb
+            // 
+            this.PercMtctb.Location = new System.Drawing.Point(212, 233);
+            this.PercMtctb.Name = "PercMtctb";
+            this.PercMtctb.Size = new System.Drawing.Size(100, 20);
+            this.PercMtctb.TabIndex = 33;
             // 
             // frmSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 685);
+            this.ClientSize = new System.Drawing.Size(535, 371);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.tabSettings);
             this.Controls.Add(this.buttonCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "frmSettings";
             this.Load += new System.EventHandler(this.frmSettings_Load);
@@ -1535,6 +1449,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox ImageSearchcb;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox PercMtctb;
+        private System.Windows.Forms.Label label1;
 
     }
 }

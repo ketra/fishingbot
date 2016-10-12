@@ -670,5 +670,17 @@ namespace UltimateFishBot.Properties {
                 this["BobberIcon"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.902")]
+        public float match {
+            get {
+                return ((float)(this["match"]));
+            }
+            set {
+                this["match"] = value;
+            }
+        }
     }
 }

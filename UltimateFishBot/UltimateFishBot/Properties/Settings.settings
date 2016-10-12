@@ -164,5 +164,8 @@
     <Setting Name="BobberIcon" Type="System.String" Scope="User">
       <Value Profile="(Default)">Resources\Bobbericon.jpg</Value>
     </Setting>
+    <Setting Name="match" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.902</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
