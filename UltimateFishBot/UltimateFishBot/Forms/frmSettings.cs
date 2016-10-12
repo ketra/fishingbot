@@ -176,6 +176,7 @@ namespace UltimateFishBot.Forms
             cbSoundAvg.Checked      = Properties.Settings.Default.AverageSound;
             ImageSearchcb.Checked = Properties.Settings.Default.ImageSearch;
             Bobbericontb.Text = Properties.Settings.Default.BobberIcon;
+            PercMtctb.Text = (Properties.Settings.Default.match * 100).ToString();
 
             /// Premium Settings
             txtProcName.Text        = Properties.Settings.Default.ProcName;
@@ -250,7 +251,8 @@ namespace UltimateFishBot.Forms
             Properties.Settings.Default.customScanArea  = customAreaCheckbox.Checked;
             Properties.Settings.Default.ImageSearch = ImageSearchcb.Checked;
             Properties.Settings.Default.BobberIcon = Bobbericontb.Text;
-            
+            float match = Convert.ToInt32(PercMtctb.Text) / 100f;
+            Properties.Settings.Default.match = match;
             /// Hearing the Fish
             Properties.Settings.Default.SplashLimit     = int.Parse(txtSplash.Text);
             Properties.Settings.Default.AudioDevice     = (string)cmbAudio.SelectedValue;

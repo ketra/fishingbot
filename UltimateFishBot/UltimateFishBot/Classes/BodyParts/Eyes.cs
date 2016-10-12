@@ -296,12 +296,14 @@ namespace UltimateFishBot.Classes.BodyParts
                 // create template matching algorithm's instance
                 // (set similarity threshold to 92.1%)
 
-
-                ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0.941f);
+                float match = Properties.Settings.Default.match;
+                //ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(0.901f);
+                ExhaustiveTemplateMatching tm = new ExhaustiveTemplateMatching(match);
 
                 // find all matchings with specified above similarity
 
                 TemplateMatch[] matchings = tm.ProcessImage(source, test);
+
                 // highlight found matchings
                 if (matchings.Length > 0)
                 {
@@ -311,8 +313,8 @@ namespace UltimateFishBot.Classes.BodyParts
                     BitmapData dataorg = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadWrite, bmp.PixelFormat);
                     foreach (TemplateMatch m in matchings)
                     {
-                        int placex = (int)(((m.Rectangle.X * divisor) * 1.05f) / dpi);
-                        int placey = (int)(((m.Rectangle.Y * divisor) * 1.05f) / dpi);
+                        int placex = (int)(((m.Rectangle.X * divisor) * 1.02f) / dpi);
+                        int placey = (int)(((m.Rectangle.Y * divisor) * 1.02f) / dpi);
                         Rectangle rec = new Rectangle(m.Rectangle.X * divisor, m.Rectangle.Y * divisor, m.Rectangle.Width * divisor, m.Rectangle.Height * divisor);
                         if (MoveMouseAndCheckCursor(placex, placey))
                             break;
